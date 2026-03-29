@@ -710,7 +710,7 @@ begin
                 maybe_rb := '1';
                 if icode < INSN_first_frs then
                     if icode >= INSN_first_rc then
-                        vr.reg_3_addr := '0' & insn_rcreg(f_in.insn);
+                        vr.reg_3_addr := "00" & insn_rcreg(f_in.insn);
                     end if;
                 else
                     -- access FRS operand

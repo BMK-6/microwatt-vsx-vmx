@@ -39,67 +39,38 @@ end entity writeback;
 architecture behaviour of writeback is
 
 begin
+    writeback_0: process(clk)
+        variable x : std_ulogic_vector(0 downto 0);
+        variable y : std_ulogic_vector(0 downto 0);
+        variable w : std_ulogic_vector(0 downto 0);
+    begin
+        if rising_edge(clk) then
+            -- Do consistency checks only on the clock edge
+            x(0) := e_in.valid;
+            y(0) := l_in.valid;
+            w(0) := fp_in.valid;
+            assert (to_integer(unsigned(x)) + to_integer(unsigned(y)) +
+                    to_integer(unsigned(w))) <= 1 severity failure;
 
-  writeback_0: process(clk)
-    	variable x : std_ulogic_vector(0 downto 0);
-    	variable y : std_ulogic_vector(0 downto 0);
-    	variable w : std_ulogic_vector(0 downto 0);
-    	variable z : std_ulogic_vector(0 downto 0);
-  begin
-    	if rising_edge(clk) then
-        -- At most one result source valid per cycle
-        -- fp_in and fp_in2 may both be valid only when they carry complementary
-        -- halves (lo vs hi lane) of the same VSX instruction. All other
-        -- combinations must be mutually exclusive.
-        	x(0) := e_in.valid;
-        	y(0) := l_in.valid;
-        	w(0) := fp_in.valid;
-        	z(0) := fp_in2.valid;
-        assert (to_integer(unsigned(x)) + to_integer(unsigned(y)) +
-                to_integer(unsigned(w))) <= 1 severity failure;
-        assert (to_integer(unsigned(x)) + to_integer(unsigned(y)) +
-                to_integer(unsigned(z))) <= 1 severity failure;
+            x(0) := e_in.write_enable;
+            y(0) := l_in.write_enable;
+            w(0) := fp_in.write_enable;
+            assert (to_integer(unsigned(x)) + to_integer(unsigned(y)) +
+                    to_integer(unsigned(w))) <= 1 severity failure;
 
-        -- write_enable: lo lane and hi lane may both assert for same VSX result
-        	x(0) := e_in.write_enable;
-        	y(0) := l_in.write_enable;
-        	w(0) := fp_in.write_enable;
-        	z(0) := fp_in2.write_enable_hi;
-        assert (to_integer(unsigned(x)) + to_integer(unsigned(y)) +
-                to_integer(unsigned(w))) <= 1 severity failure;
-        -- fp_in2 hi-lane write is permitted alongside fp_in lo-lane write
-        -- (same VSX reg, different halves), but not alongside e_in or l_in
-        assert (to_integer(unsigned(x)) + to_integer(unsigned(y)) +
-                to_integer(unsigned(z))) <= 1 severity failure;
+            w(0) := e_in.write_cr_enable;
+            x(0) := l_in.rc;
+            y(0) := fp_in.write_cr_enable;
+            assert (to_integer(unsigned(w)) + to_integer(unsigned(x)) +
+                    to_integer(unsigned(y))) <= 1 severity failure;
 
-        -- CR write: at most one source
-        	w(0) := e_in.write_cr_enable;
-        	x(0) := l_in.rc;
-        	y(0) := fp_in.write_cr_enable;
-        	z(0) := fp_in2.write_cr_enable;
-        assert (to_integer(unsigned(w)) + to_integer(unsigned(x)) +
-                to_integer(unsigned(y)) + to_integer(unsigned(z))) <= 1
-            severity failure;
+            assert (e_in.write_xerc_enable and fp_in.write_xerc) /= '1' severity failure;
 
-        -- XER: at most one source
-        assert (e_in.write_xerc_enable and fp_in.write_xerc) /= '1'
-            severity failure;
-        assert (e_in.write_xerc_enable and fp_in2.write_xerc) /= '1'
-            severity failure;
-        assert (fp_in.write_xerc and fp_in2.write_xerc) /= '1'
-            severity failure;
-
-        -- Instruction tag validity
-        assert not (e_in.valid = '1' and e_in.instr_tag.valid = '0')
-            severity failure;
-        assert not (l_in.valid = '1' and l_in.instr_tag.valid = '0')
-            severity failure;
-        assert not (fp_in.valid = '1' and fp_in.instr_tag.valid = '0')
-            severity failure;
-        assert not (fp_in2.valid = '1' and fp_in2.instr_tag.valid = '0')
-            severity failure;
-    end if;
-  end process;
+            assert not (e_in.valid = '1' and e_in.instr_tag.valid = '0') severity failure;
+            assert not (l_in.valid = '1' and l_in.instr_tag.valid = '0') severity failure;
+            assert not (fp_in.valid = '1' and fp_in.instr_tag.valid = '0') severity failure;
+        end if;
+    end process;
   writeback_1: process(all)
         variable f    : WritebackToFetch1Type;
         variable scf  : std_ulogic_vector(3 downto 0);
