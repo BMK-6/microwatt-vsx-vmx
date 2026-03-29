@@ -16,6 +16,7 @@ package common is
     constant MSR_EE  : integer := (63 - 48);    -- External interrupt Enable
     constant MSR_PR  : integer := (63 - 49);    -- PRoblem state
     constant MSR_FP  : integer := (63 - 50);    -- Floating Point available
+    constant MSR_VSX : integer := (63 - 40);    -- VSX available (Power ISA 3.1 MSR[23])
     constant MSR_FE0 : integer := (63 - 52);    -- Floating Exception mode
     constant MSR_SE  : integer := (63 - 53);    -- Single-step bit of TE field
     constant MSR_BE  : integer := (63 - 54);    -- Branch trace bit of TE field
@@ -124,7 +125,7 @@ package common is
     subtype gpr_index_t is std_ulogic_vector(4 downto 0);
 
     -- Extended GPR index (can hold a GPR or a FPR)
-    subtype gspr_index_t is std_ulogic_vector(5 downto 0);
+    subtype gspr_index_t is std_ulogic_vector(6 downto 0); --increased 1 bit to hold the addresses for new array 64 + 64 reg
 
     -- FPR indices
     subtype fpr_index_t is std_ulogic_vector(4 downto 0);
@@ -135,6 +136,7 @@ package common is
 
     -- Indices conversion functions
     function gspr_to_gpr(i: gspr_index_t) return gpr_index_t;
+    function gspr_to_fpr(i: gspr_index_t) return fpr_index_t;
     function gpr_to_gspr(i: gpr_index_t) return gspr_index_t;
     function fpr_to_gspr(f: fpr_index_t) return gspr_index_t;
 
@@ -418,12 +420,16 @@ package common is
         read_1_enable : std_ulogic;
         read_2_enable : std_ulogic;
         read_3_enable : std_ulogic;
+	is_insn_float : std_ulogic; --indicates fp instruction
+	is_insn_vector : std_ulogic; --indicates vec instruction
+
     end record;
+
 
     type bypass_data_t is record
         tag  : instr_tag_t;
         reg  : gspr_index_t;
-        data : std_ulogic_vector(63 downto 0);
+        data : std_ulogic_vector(63 downto 0); 
     end record;
     constant bypass_data_init : bypass_data_t :=
         (tag => instr_tag_init, reg => (others => '0'), data => (others => '0'));
@@ -449,6 +455,11 @@ package common is
 	read_data1: std_ulogic_vector(63 downto 0);
 	read_data2: std_ulogic_vector(63 downto 0);
 	read_data3: std_ulogic_vector(63 downto 0);
+	--hi part ofdata for vectors 
+	read_data1_hi: std_ulogic_vector(63 downto 0); 
+	read_data2_hi: std_ulogic_vector(63 downto 0);
+	read_data3_hi: std_ulogic_vector(63 downto 0);
+
         reg_valid1: std_ulogic;
         reg_valid2: std_ulogic;
         reg_valid3: std_ulogic;
@@ -512,6 +523,7 @@ package common is
 	 is_32bit => '0', is_signed => '0', xerc => xerc_init, reserve => '0', br_pred => '0',
          byte_reverse => '0', sign_extend => '0', update => '0', nia => (others => '0'),
          read_data1 => (others => '0'), read_data2 => (others => '0'), read_data3 => (others => '0'),
+	 read_data1_hi => (others => '0'), read_data2_hi => (others => '0'), read_data3_hi => (others => '0'),
          reg_valid1 => '0', reg_valid2 => '0', reg_valid3 => '0',
          cr => (others => '0'), insn => (others => '0'), data_len => (others => '0'),
          result_sel => ADD, sub_select => "000",
@@ -617,6 +629,11 @@ package common is
         read1_data : std_ulogic_vector(63 downto 0);
         read2_data : std_ulogic_vector(63 downto 0);
         read3_data : std_ulogic_vector(63 downto 0);
+	--higher bits of vector data
+	read1_data_hi : std_ulogic_vector(63 downto 0);
+        read2_data_hi : std_ulogic_vector(63 downto 0);
+        read3_data_hi : std_ulogic_vector(63 downto 0);
+
     end record;
 
     type Decode2ToCrFileType is record
@@ -804,6 +821,8 @@ package common is
 	write_enable : std_ulogic;
 	write_reg: gspr_index_t;
 	write_data: std_ulogic_vector(63 downto 0);
+	--hi part of vector data
+	write_data_hi: std_ulogic_vector(63 downto 0);
 	write_cr_enable : std_ulogic;
 	write_cr_mask : std_ulogic_vector(7 downto 0);
 	write_cr_data : std_ulogic_vector(31 downto 0);
@@ -826,7 +845,7 @@ package common is
         (valid => '0', instr_tag => instr_tag_init, rc => '0', mode_32bit => '0',
          write_enable => '0', write_cr_enable => '0',
          write_xerc_enable => '0', xerc => xerc_init,
-         write_data => (others => '0'), write_cr_mask => (others => '0'),
+         write_data => (others => '0'),write_data_hi => (others => '0'), write_cr_mask => (others => '0'),
          write_cr_data => (others => '0'), write_reg => (others => '0'),
          interrupt => '0', alt_intr => '0', hv_intr => '0', is_scv => '0', intr_vec => 0,
          redirect => '0', redir_mode => "0000",
@@ -879,8 +898,10 @@ package common is
         interrupt       : std_ulogic;
         instr_tag       : instr_tag_t;
         write_enable    : std_ulogic;
+	write_enable_hi : std_ulogic;
         write_reg       : gspr_index_t;
         write_data      : std_ulogic_vector(63 downto 0);
+	write_data_hi 	: std_ulogic_vector(63 downto 0);
         write_cr_enable : std_ulogic;
         write_cr_mask   : std_ulogic_vector(7 downto 0);
         write_cr_data   : std_ulogic_vector(31 downto 0);
@@ -891,7 +912,7 @@ package common is
     end record;
     constant FPUToWritebackInit : FPUToWritebackType :=
         (valid => '0', interrupt => '0', instr_tag => instr_tag_init,
-         write_enable => '0', write_reg => (others => '0'),
+         write_enable => '0',write_enable_hi => '0', write_reg => (others => '0'),
          write_cr_enable => '0', write_cr_mask => (others => '0'),
          write_cr_data => (others => '0'),
          write_xerc => '0', xerc => xerc_init,
@@ -929,10 +950,11 @@ package common is
     type WritebackToRegisterFileType is record
 	write_reg : gspr_index_t;
 	write_data : std_ulogic_vector(63 downto 0);
+	write_data_hi : std_ulogic_vector(63 downto 0); -- higher bits of vetor
 	write_enable : std_ulogic;
     end record;
     constant WritebackToRegisterFileInit : WritebackToRegisterFileType :=
-        (write_enable => '0', write_data => (others => '0'), others => (others => '0'));
+        (write_enable => '0', write_data => (others => '0'), write_data_hi => (others => '0'), others => (others => '0'));
 
     type WritebackToCrFileType is record
 	write_cr_enable : std_ulogic;
@@ -971,15 +993,19 @@ package body common is
     begin
 	return i(4 downto 0);
     end;
+     function gspr_to_fpr(i: gspr_index_t) return fpr_index_t is
+    begin
+	return i(4 downto 0);
+    end;
 
     function gpr_to_gspr(i: gpr_index_t) return gspr_index_t is
     begin
-	return "0" & i;
+	return "00" & i;
     end;
 
     function fpr_to_gspr(f: fpr_index_t) return gspr_index_t is
     begin
-        return "1" & f;
+        return "10" & f;
     end;
 
     function tag_match(tag1 : instr_tag_t; tag2 : instr_tag_t) return boolean is

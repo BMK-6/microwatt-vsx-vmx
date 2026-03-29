@@ -109,6 +109,12 @@ architecture behave of core is
     signal fpu_to_execute1: FPUToExecute1Type;
     signal fpu_to_writeback: FPUToWritebackType;
 
+     -- FPU2 signals
+    signal execute1_to_fpu2: Execute1ToFPUType;
+    signal fpu2_to_execute1: FPUToExecute1Type;
+    signal fpu2_to_writeback: FPUToWritebackType;
+
+
     -- Writeback signals
     signal writeback_bypass: bypass_data_t;
     signal wb_interrupt: WritebackToExecute1Type;
@@ -337,6 +343,7 @@ begin
         generic map (
             SIM => SIM,
             HAS_FPU => HAS_FPU,
+            TEST_FPU2_PATH => true,
             LOG_LENGTH => LOG_LENGTH
             )
         port map (
@@ -377,6 +384,7 @@ begin
             NCPUS => NCPUS,
             EX1_BYPASS => EX1_BYPASS,
             HAS_FPU => HAS_FPU,
+            TEST_FPU2_PATH => true, -- set true to test fpu2 integration path
             LOG_LENGTH => LOG_LENGTH
             )
         port map (
@@ -388,10 +396,12 @@ begin
             e_in => decode2_to_execute1,
             l_in => loadstore1_to_execute1,
             fp_in => fpu_to_execute1,
+	    fp_in2 => fpu2_to_execute1, --fpu2
             ext_irq_in => ext_irq,
             interrupt_in => wb_interrupt,
             l_out => execute1_to_loadstore1,
             fp_out => execute1_to_fpu,
+	    fp_out2 => execute1_to_fpu2, --fpu2
             e_out => execute1_to_writeback,
             bypass_data => execute1_bypass,
             bypass_cr_data => execute1_cr_bypass,
@@ -430,12 +440,25 @@ begin
                 e_out => fpu_to_execute1,
                 w_out => fpu_to_writeback
                 );
+	fpu_1: entity work.fpu2
+            port map (
+                clk => clk,
+                rst => rst_fpu,
+                flush_in => flush,
+                e_in => execute1_to_fpu2,
+                e_out => fpu2_to_execute1,
+                w_out => fpu2_to_writeback
+                );
+
     end generate;
 
     no_fpu: if not HAS_FPU generate
     begin
-        fpu_to_execute1 <= FPUToExecute1Init;
+        fpu_to_execute1  <= FPUToExecute1Init;
         fpu_to_writeback <= FPUToWritebackInit;
+	fpu2_to_execute1  <= FPUToExecute1Init;
+        fpu2_to_writeback <= FPUToWritebackInit;
+
     end generate;
 
     loadstore1_0: entity work.loadstore1
@@ -499,16 +522,22 @@ begin
             );
 
     writeback_0: entity work.writeback
+	generic map (
+            HAS_FPU => HAS_FPU,
+            TEST_FPU2_PATH => true            
+    	    )
+
         port map (
             clk => clk,
             rst => rst_wback,
             flush_out => flush,
-            e_in => execute1_to_writeback,
-            l_in => loadstore1_to_writeback,
-            fp_in => fpu_to_writeback,
-            w_out => writeback_to_register_file,
-            c_out => writeback_to_cr_file,
-            f_out => writeback_to_fetch1,
+            e_in   => execute1_to_writeback,
+            l_in   => loadstore1_to_writeback,
+            fp_in  => fpu_to_writeback,
+	    fp_in2 => fpu2_to_writeback,
+            w_out  => writeback_to_register_file,
+            c_out  => writeback_to_cr_file,
+            f_out  => writeback_to_fetch1,
             wb_bypass => writeback_bypass,
             events => writeback_events,
             interrupt_out => wb_interrupt,

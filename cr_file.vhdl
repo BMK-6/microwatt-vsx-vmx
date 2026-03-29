@@ -43,14 +43,15 @@ begin
             if w_in.write_cr_mask(i) = '1' then
                 lo := i*4;
                 hi := lo + 3;
-                cr_tmp(hi downto lo) := w_in.write_cr_data(hi downto lo);
+                cr_tmp(hi downto lo) := w_in.
+		write_cr_data(hi downto lo);
             end if;
         end loop;
 
         crs_updated <= cr_tmp;
 
         if w_in.write_xerc_enable = '1' then
-            xerc_updated <= w_in.write_xerc_data;
+            xerc_updated <= w_in.write_xerc_data ;
         else
             xerc_updated <= xerc;
         end if;
@@ -71,7 +72,7 @@ begin
                     " CA=" & std_ulogic'image(xerc_updated.ca) &
                     " OV32=" & std_ulogic'image(xerc_updated.ov32) &
                     " CA32=" & std_ulogic'image(xerc_updated.ca32);
-                xerc <= xerc_updated;
+                xerc <= xerc_updated ;
             end if;
         end if;
     end process;

@@ -113,7 +113,7 @@ architecture behave of loadstore1 is
     constant request_init : request_t := (addr => (others => '0'),
                                           byte_sel => x"00", second_bytes => x"00",
                                           store_data => (others => '0'), instr_tag => instr_tag_init,
-                                          write_reg => 6x"00", length => x"0",
+                                          write_reg => 7x"00", length => x"0",
                                           elt_length => x"0", brev_mask => "000",
                                           xerc => xerc_init,
                                           sprsel => "0000", ric => "00",

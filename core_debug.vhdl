@@ -289,7 +289,7 @@ begin
             end if;
 
             -- Map 0 - 0x1f to GPRs, 0x20 - 0x3f to SPRs, and 0x40 - 0x5f to FPRs
-            dbg_gpr_addr <= gspr_index(6) & gspr_index(4 downto 0);
+            dbg_gpr_addr <= gspr_index(6) &'0' & gspr_index(4 downto 0);
             dbg_ls_spr_addr <= gspr_index(1 downto 0);
 
             -- For SPRs, use the same mapping as when the fast SPRs were in the GPR file

@@ -7,6 +7,11 @@ use work.common.all;
 use work.crhelpers.all;
 
 entity writeback is
+    generic( HAS_FPU : boolean := true;
+    	     -- Revert to false before VSX decode integration
+      	     TEST_FPU2_PATH : boolean := true
+
+); 
     port (
         clk          : in std_ulogic;
         rst          : in std_ulogic;
@@ -14,6 +19,7 @@ entity writeback is
         e_in         : in Execute1ToWritebackType;
         l_in         : in Loadstore1ToWritebackType;
         fp_in        : in FPUToWritebackType;
+    	fp_in2        : in FPUToWritebackType;
 
         w_out        : out WritebackToRegisterFileType;
         c_out        : out WritebackToCrFileType;
@@ -33,40 +39,68 @@ end entity writeback;
 architecture behaviour of writeback is
 
 begin
-    writeback_0: process(clk)
-        variable x : std_ulogic_vector(0 downto 0);
-        variable y : std_ulogic_vector(0 downto 0);
-        variable w : std_ulogic_vector(0 downto 0);
-    begin
-        if rising_edge(clk) then
-            -- Do consistency checks only on the clock edge
-            x(0) := e_in.valid;
-            y(0) := l_in.valid;
-            w(0) := fp_in.valid;
-            assert (to_integer(unsigned(x)) + to_integer(unsigned(y)) +
-                    to_integer(unsigned(w))) <= 1 severity failure;
 
-            x(0) := e_in.write_enable;
-            y(0) := l_in.write_enable;
-            w(0) := fp_in.write_enable;
-            assert (to_integer(unsigned(x)) + to_integer(unsigned(y)) +
-                    to_integer(unsigned(w))) <= 1 severity failure;
+  writeback_0: process(clk)
+    	variable x : std_ulogic_vector(0 downto 0);
+    	variable y : std_ulogic_vector(0 downto 0);
+    	variable w : std_ulogic_vector(0 downto 0);
+    	variable z : std_ulogic_vector(0 downto 0);
+  begin
+    	if rising_edge(clk) then
+        -- At most one result source valid per cycle
+        -- fp_in and fp_in2 may both be valid only when they carry complementary
+        -- halves (lo vs hi lane) of the same VSX instruction. All other
+        -- combinations must be mutually exclusive.
+        	x(0) := e_in.valid;
+        	y(0) := l_in.valid;
+        	w(0) := fp_in.valid;
+        	z(0) := fp_in2.valid;
+        assert (to_integer(unsigned(x)) + to_integer(unsigned(y)) +
+                to_integer(unsigned(w))) <= 1 severity failure;
+        assert (to_integer(unsigned(x)) + to_integer(unsigned(y)) +
+                to_integer(unsigned(z))) <= 1 severity failure;
 
-            w(0) := e_in.write_cr_enable;
-            x(0) := l_in.rc;
-            y(0) := fp_in.write_cr_enable;
-            assert (to_integer(unsigned(w)) + to_integer(unsigned(x)) +
-                    to_integer(unsigned(y))) <= 1 severity failure;
+        -- write_enable: lo lane and hi lane may both assert for same VSX result
+        	x(0) := e_in.write_enable;
+        	y(0) := l_in.write_enable;
+        	w(0) := fp_in.write_enable;
+        	z(0) := fp_in2.write_enable_hi;
+        assert (to_integer(unsigned(x)) + to_integer(unsigned(y)) +
+                to_integer(unsigned(w))) <= 1 severity failure;
+        -- fp_in2 hi-lane write is permitted alongside fp_in lo-lane write
+        -- (same VSX reg, different halves), but not alongside e_in or l_in
+        assert (to_integer(unsigned(x)) + to_integer(unsigned(y)) +
+                to_integer(unsigned(z))) <= 1 severity failure;
 
-            assert (e_in.write_xerc_enable and fp_in.write_xerc) /= '1' severity failure;
+        -- CR write: at most one source
+        	w(0) := e_in.write_cr_enable;
+        	x(0) := l_in.rc;
+        	y(0) := fp_in.write_cr_enable;
+        	z(0) := fp_in2.write_cr_enable;
+        assert (to_integer(unsigned(w)) + to_integer(unsigned(x)) +
+                to_integer(unsigned(y)) + to_integer(unsigned(z))) <= 1
+            severity failure;
 
-            assert not (e_in.valid = '1' and e_in.instr_tag.valid = '0') severity failure;
-            assert not (l_in.valid = '1' and l_in.instr_tag.valid = '0') severity failure;
-            assert not (fp_in.valid = '1' and fp_in.instr_tag.valid = '0') severity failure;
-        end if;
-    end process;
+        -- XER: at most one source
+        assert (e_in.write_xerc_enable and fp_in.write_xerc) /= '1'
+            severity failure;
+        assert (e_in.write_xerc_enable and fp_in2.write_xerc) /= '1'
+            severity failure;
+        assert (fp_in.write_xerc and fp_in2.write_xerc) /= '1'
+            severity failure;
 
-    writeback_1: process(all)
+        -- Instruction tag validity
+        assert not (e_in.valid = '1' and e_in.instr_tag.valid = '0')
+            severity failure;
+        assert not (l_in.valid = '1' and l_in.instr_tag.valid = '0')
+            severity failure;
+        assert not (fp_in.valid = '1' and fp_in.instr_tag.valid = '0')
+            severity failure;
+        assert not (fp_in2.valid = '1' and fp_in2.instr_tag.valid = '0')
+            severity failure;
+    end if;
+  end process;
+  writeback_1: process(all)
         variable f    : WritebackToFetch1Type;
         variable scf  : std_ulogic_vector(3 downto 0);
         variable vec  : integer range 0 to 16#fff#;
@@ -76,8 +110,10 @@ begin
         variable scv  : std_ulogic;
         variable intr_page : std_ulogic_vector(4 downto 0);
         variable intr_seg  : std_ulogic_vector(1 downto 0);
+
     begin
-        w_out <= WritebackToRegisterFileInit;
+	   
+    	w_out <= WritebackToRegisterFileInit;
         c_out <= WritebackToCrFileInit;
         f := WritebackToFetch1Init;
         vec := 0;
@@ -88,13 +124,17 @@ begin
             complete_out <= e_in.instr_tag;
         elsif l_in.valid = '1' then
             complete_out <= l_in.instr_tag;
-        elsif fp_in.valid = '1' then
-            complete_out <= fp_in.instr_tag;
-        end if;
+	elsif fp_in2.valid = '1' or fp_in2.interrupt = '1' then
+    	-- fpu2: complete on normal finish OR on FP program interrupt
+    	    complete_out <= fp_in2.instr_tag;
+	elsif fp_in.valid = '1' or fp_in.interrupt = '1' then
+    	    complete_out <= fp_in.instr_tag;
+	end if;    
+       
         events.instr_complete <= complete_out.valid;
-        events.fp_complete <= fp_in.valid;
+        events.fp_complete <= fp_in.valid or fp_in2.valid ;
 
-        intr := e_in.interrupt or l_in.interrupt or fp_in.interrupt;
+        intr := e_in.interrupt or l_in.interrupt or fp_in.interrupt or fp_in2.interrupt;
         interrupt_out.intr <= intr;
 
         srr1 := (others => '0');
@@ -102,8 +142,15 @@ begin
         if e_in.alt_intr = '1' then
             intr_page := 5x"4";
         end if;
-        intr_seg := e_in.alt_intr & e_in.alt_intr;
-        scv := '0';
+        -- AFTER:
+	-- alt_intr only applies to e_in-sourced interrupts.
+	-- FP/FPU2 interrupts always use normal (non-alt) vector space.
+	if e_in.interrupt = '1' then
+    		intr_seg := e_in.alt_intr & e_in.alt_intr;
+	else
+    		intr_seg := "00";
+	end if;        
+	scv := '0';
         if e_in.interrupt = '1' then
             vec := e_in.intr_vec;
             srr1 := e_in.srr1;
@@ -119,9 +166,13 @@ begin
         elsif l_in.interrupt = '1' then
             vec := l_in.intr_vec;
             srr1 := l_in.srr1;
-        elsif fp_in.interrupt = '1' then
+        elsif fp_in.interrupt = '1'  then
             vec := fp_in.intr_vec;
             srr1 := fp_in.srr1;
+        elsif fp_in2.interrupt = '1' then
+            -- VSX/fpu2 exception — same interrupt infrastructure as fpu1
+            vec := fp_in2.intr_vec;
+            srr1 := fp_in2.srr1;
         end if;
         interrupt_out.hv_intr <= hvi;
         interrupt_out.srr1 <= srr1;
@@ -132,7 +183,7 @@ begin
             if e_in.write_enable = '1' then
                 w_out.write_reg <= e_in.write_reg;
                 w_out.write_data <= e_in.write_data;
-                w_out.write_enable <= '1';
+		w_out.write_enable <= '1';
             end if;
 
             if e_in.write_cr_enable = '1' then
@@ -151,11 +202,32 @@ begin
                 w_out.write_data <= fp_in.write_data;
                 w_out.write_enable <= '1';
             end if;
+            if fp_in2.write_enable_hi = '1' then
+                -- VSX result write to hi register lane
+                w_out.write_reg <= fp_in2.write_reg;
+                w_out.write_data_hi <= fp_in2.write_data_hi;
+                w_out.write_enable <= '1';
+            end if;
 
-            if fp_in.write_cr_enable = '1' then
-                c_out.write_cr_enable <= '1';
-                c_out.write_cr_mask <= fp_in.write_cr_mask;
-                c_out.write_cr_data <= fp_in.write_cr_data;
+	    
+      	    -- CR update — each unit drives its own mask and data independently.
+	    -- The cr_file merges by mask, so only the field selected by each mask is written.
+	    -- For scalar FP (TEST_FPU2_PATH), only fp_in2 fires.
+	    -- For future dual-issue VSX, the scheduler must ensure no CR conflict.
+	   if fp_in.write_cr_enable = '1' then
+    		c_out.write_cr_enable <= '1';
+    	   	c_out.write_cr_mask   <= fp_in.write_cr_mask;
+    	   	c_out.write_cr_data   <= fp_in.write_cr_data;
+	   end if;
+	   if fp_in2.write_cr_enable = '1' then
+    	   	c_out.write_cr_enable <= '1';
+    	   	c_out.write_cr_mask   <= fp_in2.write_cr_mask;
+    	   	c_out.write_cr_data   <= fp_in2.write_cr_data;
+	   end if;
+	    -- VSX XER update
+	    if  fp_in2.write_xerc = '1' then
+		 c_out.write_xerc_enable <= '1';
+                 c_out.write_xerc_data <=   fp_in2.xerc;
             end if;
 
             if fp_in.write_xerc = '1' then
@@ -167,6 +239,12 @@ begin
                 w_out.write_reg <= l_in.write_reg;
                 w_out.write_data <= l_in.write_data;
                 w_out.write_enable <= '1';
+                -- FP load (write_reg(6)='1'): also write hi lane
+                -- so hi_registers get same value as lo_registers
+                -- GPR load (write_reg(6)='0'): hi lane unchanged
+                if HAS_FPU and l_in.write_reg(6) = '1'and TEST_FPU2_PATH then
+                    w_out.write_data_hi <= l_in.write_data;
+                end if;
             end if;
 
             if l_in.rc = '1' then
@@ -204,7 +282,12 @@ begin
         wb_bypass.tag.tag <= complete_out.tag;
         wb_bypass.tag.valid <= complete_out.valid and w_out.write_enable;
         wb_bypass.reg <= w_out.write_reg;
-        wb_bypass.data <= w_out.write_data;
+        if HAS_FPU and TEST_FPU2_PATH and w_out.write_reg(6) = '1' then
+	    -- FPR write via fpu2: result is in write_data_hi → goes to lo_registers
+	    wb_bypass.data <= w_out.write_data_hi;
+	else
+	    wb_bypass.data <= w_out.write_data;
+	end if;
 
     end process;
 end;

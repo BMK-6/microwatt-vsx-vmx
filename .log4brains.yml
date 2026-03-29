@@ -1,0 +1,8 @@
+project:
+  name: Microwatt VMX/VSX Vector Unit Integration
+  tz: Asia/Calcutta
+  adrFolder: (docs/adr)
+  packages:
+    - name: microwatt-vmx-vsx
+      path: ./
+      adrFolder: .//docs/adr

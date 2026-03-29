@@ -397,6 +397,9 @@ architecture behaviour of decode1 is
         INSN_xori        =>  (ALU,  NONE, OP_COMPUTE,   NONE,       IMM, CONST_UI,    RS,   RA,   LOG, "001", '0', '0', '0', '0', ZERO, '0', NONE, '0', '0', '0', '0', '0', '0', NONE, '0', '0', '0', NONE),
         INSN_xoris       =>  (ALU,  NONE, OP_COMPUTE,   NONE,       IMM, CONST_UI_HI, RS,   RA,   LOG, "001", '0', '0', '0', '0', ZERO, '0', NONE, '0', '0', '0', '0', '0', '0', NONE, '0', '0', '0', NONE),
 
+	INSN_xxlor      =>  (ALU,  NONE, OP_COMPUTE,   NONE,       FRB,  NONE,       FRS,  FRT,   LOG, "000", '0', '0', '1', '1', ZERO, '0', NONE, '0', '0', '0', '0', '0', '1', RC,   '0', '0', '0', NONE),
+
+
         others           =>  (ALU,  NONE, OP_ILLEGAL,   NONE,       IMM, NONE,        NONE, NONE, ADD, "000", '0', '0', '0', '0', ZERO, '0', NONE, '0', '0', '0', '0', '0', '0', NONE, '0', '0', '0', NONE)
         );
 
@@ -700,9 +703,9 @@ begin
         -- only on the suffix.
         if double = '0' then
             maybe_rb := '0';
-            vr.reg_1_addr := '0' & insn_ra(f_in.insn);
-            vr.reg_2_addr := '0' & insn_rb(f_in.insn);
-            vr.reg_3_addr := '0' & insn_rs(f_in.insn);
+            vr.reg_1_addr := "00" & insn_ra(f_in.insn);
+            vr.reg_2_addr := "00" & insn_rb(f_in.insn);
+            vr.reg_3_addr := "00" & insn_rs(f_in.insn);
             if icode >= INSN_first_rb then
                 maybe_rb := '1';
                 if icode < INSN_first_frs then
@@ -711,18 +714,29 @@ begin
                     end if;
                 else
                     -- access FRS operand
-                    vr.reg_3_addr(5) := '1';
+                    vr.reg_3_addr(6 downto 5) := "10";
                     if icode >= INSN_first_frab then
                         -- access FRA and/or FRB operands
-                        vr.reg_1_addr(5) := '1';
-                        vr.reg_2_addr(5) := '1';
+                        vr.reg_1_addr(6 downto 5) := "10";
+                        vr.reg_2_addr(6 downto 5) := "10";
                     end if;
                     if icode >= INSN_first_frabc then
                         -- access FRC operand
-                        vr.reg_3_addr := '1' & insn_rcreg(f_in.insn);
+                        vr.reg_3_addr := "10" & insn_rcreg(f_in.insn);
                     end if;
                 end if;
             end if;
+ 
+	    -- instruction intent defaults
+	    vr.is_insn_float  := '0';
+	    vr.is_insn_vector := '0'; 
+
+
+	    --is floating instruction
+	    if icode >= INSN_first_frs then
+		vr.is_insn_float := '1';
+	    end if;
+
             -- See if this is an instruction where repeat_t = DRSP and we need
             -- to read RS|1 followed by RS, i.e. stq or stqcx. in LE mode
             -- (note we don't have access to the decode for the current instruction)

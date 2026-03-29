@@ -1,0 +1,870 @@
+icache.vhdl:343:9:@0ms:(report note): ROW_SIZE      = 8
+icache.vhdl:344:9:@0ms:(report note): ROW_PER_LINE  = 8
+icache.vhdl:345:9:@0ms:(report note): BRAM_ROWS     = 512
+icache.vhdl:346:9:@0ms:(report note): INSN_PER_ROW  = 2
+icache.vhdl:347:9:@0ms:(report note): INSN_BITS     = 1
+icache.vhdl:348:9:@0ms:(report note): ROW_BITS      = 9
+icache.vhdl:349:9:@0ms:(report note): ROW_LINEBITS  = 3
+icache.vhdl:350:9:@0ms:(report note): LINE_OFF_BITS = 6
+icache.vhdl:351:9:@0ms:(report note): ROW_OFF_BITS  = 3
+icache.vhdl:352:9:@0ms:(report note): INDEX_BITS    = 6
+icache.vhdl:353:9:@0ms:(report note): TAG_BITS      = 45
+icache.vhdl:354:9:@0ms:(report note): WAY_BITS      = 1
+../../src/ieee2008/numeric_std-body.vhdl:1265:7:@0ms:(assertion warning): NUMERIC_STD.">": metavalue detected, returning FALSE
+../../src/ieee2008/numeric_std-body.vhdl:1721:7:@0ms:(assertion warning): NUMERIC_STD.">=": metavalue detected, returning FALSE
+../../src/ieee2008/numeric_std-body.vhdl:1320:7:@0ms:(assertion warning): NUMERIC_STD."<": metavalue detected, returning FALSE
+../../src/ieee2008/numeric_std-body.vhdl:1320:7:@0ms:(assertion warning): NUMERIC_STD."<": metavalue detected, returning FALSE
+../../src/ieee2008/numeric_std-body.vhdl:3036:7:@0ms:(assertion warning): NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+core_debug.vhdl:375:13:@5ns:(assertion error): Assertion violation
+../../src/ieee2008/numeric_std-body.vhdl:3036:7:@5ns:(assertion warning): NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+../../src/ieee2008/numeric_std-body.vhdl:3036:7:@5ns:(assertion warning): NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+../../src/ieee2008/numeric_std-body.vhdl:3036:7:@5ns:(assertion warning): NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+../../src/ieee2008/numeric_std-body.vhdl:3036:7:@5ns:(assertion warning): NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+../../src/ieee2008/numeric_std-body.vhdl:3036:7:@5ns:(assertion warning): NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+../../src/ieee2008/numeric_std-body.vhdl:3036:7:@5ns:(assertion warning): NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+../../src/ieee2008/numeric_std-body.vhdl:3036:7:@5ns:(assertion warning): NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+../../src/ieee2008/numeric_std-body.vhdl:3036:7:@5ns:(assertion warning): NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+../../src/ieee2008/numeric_std-body.vhdl:3036:7:@5ns:(assertion warning): NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+fetch1.vhdl:122:17:@5ns:(report note): fetch1 rst:'U' IR:'U' P:'1' E:'0' 32:'0' I:'U' R:'U''U' S:'U' T:'U' nia:XXXXXXXXXXXXXXXX req:'0' FF:'0'
+../../src/ieee2008/numeric_std-body.vhdl:1320:7:@5ns:(assertion warning): NUMERIC_STD."<": metavalue detected, returning FALSE
+../../src/ieee2008/numeric_std-body.vhdl:1320:7:@5ns:(assertion warning): NUMERIC_STD."<": metavalue detected, returning FALSE
+../../src/ieee2008/numeric_std-body.vhdl:1320:7:@5ns:(assertion warning): NUMERIC_STD."<": metavalue detected, returning FALSE
+../../src/ieee2008/numeric_std-body.vhdl:1320:7:@5ns:(assertion warning): NUMERIC_STD."<": metavalue detected, returning FALSE
+core_debug.vhdl:375:13:@15ns:(assertion error): Assertion violation
+../../src/ieee2008/numeric_std-body.vhdl:3036:7:@15ns:(assertion warning): NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+../../src/ieee2008/numeric_std-body.vhdl:3036:7:@15ns:(assertion warning): NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+../../src/ieee2008/numeric_std-body.vhdl:3036:7:@15ns:(assertion warning): NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+../../src/ieee2008/numeric_std-body.vhdl:3036:7:@15ns:(assertion warning): NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+../../src/ieee2008/numeric_std-body.vhdl:3036:7:@15ns:(assertion warning): NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+../../src/ieee2008/numeric_std-body.vhdl:3036:7:@15ns:(assertion warning): NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+fetch1.vhdl:122:17:@15ns:(report note): fetch1 rst:'U' IR:'U' P:'1' E:'0' 32:'0' I:'U' R:'U''0' S:'U' T:'U' nia:0000000000000000 req:'0' FF:'0'
+core_debug.vhdl:375:13:@25ns:(assertion error): Assertion violation
+../../src/ieee2008/numeric_std-body.vhdl:3036:7:@25ns:(assertion warning): NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+../../src/ieee2008/numeric_std-body.vhdl:3036:7:@25ns:(assertion warning): NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+../../src/ieee2008/numeric_std-body.vhdl:3036:7:@25ns:(assertion warning): NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+../../src/ieee2008/numeric_std-body.vhdl:3036:7:@25ns:(assertion warning): NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+../../src/ieee2008/numeric_std-body.vhdl:3036:7:@25ns:(assertion warning): NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+../../src/ieee2008/numeric_std-body.vhdl:3036:7:@25ns:(assertion warning): NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+fetch1.vhdl:122:17:@25ns:(report note): fetch1 rst:'1' IR:'0' P:'1' E:'0' 32:'0' I:'U' R:'U''0' S:'U' T:'U' nia:0000000000000000 req:'0' FF:'0'
+fetch1.vhdl:122:17:@35ns:(report note): fetch1 rst:'1' IR:'0' P:'1' E:'0' 32:'0' I:'0' R:'0''0' S:'0' T:'0' nia:0000000000000000 req:'0' FF:'0'
+Debug socket ready
+fetch1.vhdl:122:17:@125ns:(report note): fetch1 rst:'0' IR:'0' P:'1' E:'0' 32:'0' I:'0' R:'0''0' S:'0' T:'0' nia:0000000000000000 req:'1' FF:'0'
+icache.vhdl:725:25:@135ns:(report note): cache miss nia:0000000000000000 IR:'0' SM:'0' idx:00 tag:000000000000 RA:00000000000000
+sim_bram.vhdl:59:17:@145ns:(report note): RAM reading from 00000 returns 614A00003D400000
+sim_bram.vhdl:59:17:@155ns:(report note): RAM reading from 00008 returns 654A0000794A07C6
+sim_bram.vhdl:59:17:@165ns:(report note): RAM reading from 00010 returns 3D600000614A2080
+sim_bram.vhdl:59:17:@175ns:(report note): RAM reading from 00018 returns 796B07C6616B0000
+sim_bram.vhdl:59:17:@185ns:(report note): RAM reading from 00020 returns 616B2100656B0000
+icache.vhdl:617:21:@185ns:(report note): cache hit nia:0000000000000000 IR:'0' SM:'0' idx:00 tag:000000000000 way:0 RA:00000000000000
+fetch1.vhdl:122:17:@185ns:(report note): fetch1 rst:'0' IR:'0' P:'1' E:'0' 32:'0' I:'0' R:'0''0' S:'0' T:'0' nia:0000000000000004 req:'1' FF:'0'
+decode1.vhdl:671:13:@185ns:(report note): Decode insn_illegal 00000000 at 0000000000000000
+decode1.vhdl:671:13:@185ns:(report note): Decode insn_addis 3D400000 at 0000000000000000
+sim_bram.vhdl:59:17:@195ns:(report note): RAM reading from 00028 returns 396B003F7D6A5850
+icache.vhdl:617:21:@195ns:(report note): cache hit nia:0000000000000004 IR:'0' SM:'0' idx:00 tag:000000000000 way:0 RA:00000000000004
+fetch1.vhdl:122:17:@195ns:(report note): fetch1 rst:'0' IR:'0' P:'1' E:'0' 32:'0' I:'0' R:'0''0' S:'0' T:'0' nia:0000000000000008 req:'1' FF:'0'
+decode1.vhdl:671:13:@195ns:(report note): Decode insn_addis 3D400000 at 0000000000000000
+decode1.vhdl:671:13:@195ns:(report note): Decode insn_ori 614A0000 at 0000000000000004
+sim_bram.vhdl:59:17:@205ns:(report note): RAM reading from 00030 returns 41820014796BD183
+decode2.vhdl:314:21:@205ns:(report note): execute 0000000000000000 tag=0'1' rpt='0' 2nd='0' wr=0A
+control.vhdl:127:29:@205ns:(report note): tag 0 valid for gpr 0A
+icache.vhdl:617:21:@205ns:(report note): cache hit nia:0000000000000008 IR:'0' SM:'0' idx:00 tag:000000000000 way:0 RA:00000000000008
+fetch1.vhdl:122:17:@205ns:(report note): fetch1 rst:'0' IR:'0' P:'1' E:'0' 32:'0' I:'0' R:'0''0' S:'0' T:'0' nia:000000000000000C req:'1' FF:'0'
+decode1.vhdl:671:13:@205ns:(report note): Decode insn_ori 614A0000 at 0000000000000004
+decode1.vhdl:671:13:@205ns:(report note): Decode insn_addis 3D400000 at 0000000000000008
+register_file.vhdl:169:13:@205ns:(report note): Reading GPR 0A 0000000000000000
+decode1.vhdl:671:13:@205ns:(report note): Decode insn_rldicr 794A07C6 at 0000000000000008
+sim_bram.vhdl:59:17:@215ns:(report note): RAM reading from 00038 returns 7C0057EC7D6903A6
+execute1.vhdl:810:21:@215ns:(report note): CPU 0 execute 0000000000000000 op=op_add wr=0A we='1' tag=0'1' 2nd='0'
+decode2.vhdl:314:21:@215ns:(report note): execute 0000000000000004 tag=1'1' rpt='0' 2nd='0' wr=0A
+control.vhdl:116:29:@215ns:(report note): tag 0 not recent
+control.vhdl:127:29:@215ns:(report note): tag 1 valid for gpr 0A
+icache.vhdl:617:21:@215ns:(report note): cache hit nia:000000000000000C IR:'0' SM:'0' idx:00 tag:000000000000 way:0 RA:0000000000000C
+fetch1.vhdl:122:17:@215ns:(report note): fetch1 rst:'0' IR:'0' P:'1' E:'0' 32:'0' I:'0' R:'0''0' S:'0' T:'0' nia:0000000000000010 req:'1' FF:'0'
+decode1.vhdl:671:13:@215ns:(report note): Decode insn_rldicr 794A07C6 at 0000000000000008
+decode1.vhdl:671:13:@215ns:(report note): Decode insn_oris 654A0000 at 000000000000000C
+execute1.vhdl:810:21:@225ns:(report note): CPU 0 execute 0000000000000004 op=op_compute wr=0A we='1' tag=1'1' 2nd='0'
+decode2.vhdl:314:21:@225ns:(report note): execute 0000000000000008 tag=2'1' rpt='0' 2nd='0' wr=0A
+control.vhdl:116:29:@225ns:(report note): tag 1 not recent
+control.vhdl:127:29:@225ns:(report note): tag 2 valid for gpr 0A
+icache.vhdl:617:21:@225ns:(report note): cache hit nia:0000000000000010 IR:'0' SM:'0' idx:00 tag:000000000000 way:0 RA:00000000000010
+fetch1.vhdl:122:17:@225ns:(report note): fetch1 rst:'0' IR:'0' P:'1' E:'0' 32:'0' I:'0' R:'0''0' S:'0' T:'0' nia:0000000000000014 req:'1' FF:'0'
+decode1.vhdl:671:13:@225ns:(report note): Decode insn_oris 654A0000 at 000000000000000C
+decode1.vhdl:671:13:@225ns:(report note): Decode insn_rldicr 794A07C6 at 0000000000000010
+decode1.vhdl:671:13:@225ns:(report note): Decode insn_ori 614A2080 at 0000000000000010
+execute1.vhdl:810:21:@235ns:(report note): CPU 0 execute 0000000000000008 op=op_compute wr=0A we='1' tag=2'1' 2nd='0'
+register_file.vhdl:70:21:@235ns:(report note): Writing GPR 0A 0000000000000000
+decode2.vhdl:314:21:@235ns:(report note): execute 000000000000000C tag=3'1' rpt='0' 2nd='0' wr=0A
+control.vhdl:110:25:@235ns:(report note): tag 0 not valid
+control.vhdl:116:29:@235ns:(report note): tag 2 not recent
+control.vhdl:127:29:@235ns:(report note): tag 3 valid for gpr 0A
+icache.vhdl:617:21:@235ns:(report note): cache hit nia:0000000000000014 IR:'0' SM:'0' idx:00 tag:000000000000 way:0 RA:00000000000014
+fetch1.vhdl:122:17:@235ns:(report note): fetch1 rst:'0' IR:'0' P:'1' E:'0' 32:'0' I:'0' R:'0''0' S:'0' T:'0' nia:0000000000000018 req:'1' FF:'0'
+decode1.vhdl:671:13:@235ns:(report note): Decode insn_ori 614A2080 at 0000000000000010
+register_file.vhdl:169:13:@235ns:(report note): Reading GPR 0A 0000000000000000
+decode1.vhdl:671:13:@235ns:(report note): Decode insn_addis 3D600000 at 0000000000000014
+execute1.vhdl:810:21:@245ns:(report note): CPU 0 execute 000000000000000C op=op_compute wr=0A we='1' tag=3'1' 2nd='0'
+register_file.vhdl:70:21:@245ns:(report note): Writing GPR 0A 0000000000000000
+decode2.vhdl:314:21:@245ns:(report note): execute 0000000000000010 tag=0'1' rpt='0' 2nd='0' wr=0A
+control.vhdl:127:29:@245ns:(report note): tag 0 valid for gpr 0A
+control.vhdl:110:25:@245ns:(report note): tag 1 not valid
+control.vhdl:116:29:@245ns:(report note): tag 3 not recent
+icache.vhdl:617:21:@245ns:(report note): cache hit nia:0000000000000018 IR:'0' SM:'0' idx:00 tag:000000000000 way:0 RA:00000000000018
+fetch1.vhdl:122:17:@245ns:(report note): fetch1 rst:'0' IR:'0' P:'1' E:'0' 32:'0' I:'0' R:'0''0' S:'0' T:'0' nia:000000000000001C req:'1' FF:'0'
+decode1.vhdl:671:13:@245ns:(report note): Decode insn_addis 3D600000 at 0000000000000014
+register_file.vhdl:169:13:@245ns:(report note): Reading GPR 0B 0000000000000000
+decode1.vhdl:671:13:@245ns:(report note): Decode insn_ori 614A2080 at 0000000000000018
+decode1.vhdl:671:13:@245ns:(report note): Decode insn_ori 616B0000 at 0000000000000018
+execute1.vhdl:810:21:@255ns:(report note): CPU 0 execute 0000000000000010 op=op_compute wr=0A we='1' tag=0'1' 2nd='0'
+register_file.vhdl:70:21:@255ns:(report note): Writing GPR 0A 0000000000000000
+decode2.vhdl:314:21:@255ns:(report note): execute 0000000000000014 tag=1'1' rpt='0' 2nd='0' wr=0B
+control.vhdl:127:29:@255ns:(report note): tag 1 valid for gpr 0B
+control.vhdl:110:25:@255ns:(report note): tag 2 not valid
+icache.vhdl:617:21:@255ns:(report note): cache hit nia:000000000000001C IR:'0' SM:'0' idx:00 tag:000000000000 way:0 RA:0000000000001C
+fetch1.vhdl:122:17:@255ns:(report note): fetch1 rst:'0' IR:'0' P:'1' E:'0' 32:'0' I:'0' R:'0''0' S:'0' T:'0' nia:0000000000000020 req:'1' FF:'0'
+decode1.vhdl:671:13:@255ns:(report note): Decode insn_ori 616B0000 at 0000000000000018
+decode1.vhdl:671:13:@255ns:(report note): Decode insn_rldicr 796B07C6 at 000000000000001C
+register_file.vhdl:169:13:@255ns:(report note): Reading GPR 0B 0000000000000000
+execute1.vhdl:810:21:@265ns:(report note): CPU 0 execute 0000000000000014 op=op_add wr=0B we='1' tag=1'1' 2nd='0'
+register_file.vhdl:70:21:@265ns:(report note): Writing GPR 0A 0000000000000000
+decode2.vhdl:314:21:@265ns:(report note): execute 0000000000000018 tag=2'1' rpt='0' 2nd='0' wr=0B
+control.vhdl:116:29:@265ns:(report note): tag 1 not recent
+control.vhdl:127:29:@265ns:(report note): tag 2 valid for gpr 0B
+control.vhdl:110:25:@265ns:(report note): tag 3 not valid
+icache.vhdl:617:21:@265ns:(report note): cache hit nia:0000000000000020 IR:'0' SM:'0' idx:00 tag:000000000000 way:0 RA:00000000000020
+fetch1.vhdl:122:17:@265ns:(report note): fetch1 rst:'0' IR:'0' P:'1' E:'0' 32:'0' I:'0' R:'0''0' S:'0' T:'0' nia:0000000000000024 req:'1' FF:'0'
+decode1.vhdl:671:13:@265ns:(report note): Decode insn_rldicr 796B07C6 at 000000000000001C
+decode1.vhdl:671:13:@265ns:(report note): Decode insn_ori 616B0000 at 0000000000000020
+decode1.vhdl:671:13:@265ns:(report note): Decode insn_oris 656B0000 at 0000000000000020
+execute1.vhdl:810:21:@275ns:(report note): CPU 0 execute 0000000000000018 op=op_compute wr=0B we='1' tag=2'1' 2nd='0'
+register_file.vhdl:70:21:@275ns:(report note): Writing GPR 0A 0000000000002080
+decode2.vhdl:314:21:@275ns:(report note): execute 000000000000001C tag=3'1' rpt='0' 2nd='0' wr=0B
+control.vhdl:110:25:@275ns:(report note): tag 0 not valid
+control.vhdl:116:29:@275ns:(report note): tag 2 not recent
+control.vhdl:127:29:@275ns:(report note): tag 3 valid for gpr 0B
+icache.vhdl:617:21:@275ns:(report note): cache hit nia:0000000000000024 IR:'0' SM:'0' idx:00 tag:000000000000 way:0 RA:00000000000024
+fetch1.vhdl:122:17:@275ns:(report note): fetch1 rst:'0' IR:'0' P:'1' E:'0' 32:'0' I:'0' R:'0''0' S:'0' T:'0' nia:0000000000000028 req:'1' FF:'0'
+decode1.vhdl:671:13:@275ns:(report note): Decode insn_oris 656B0000 at 0000000000000020
+register_file.vhdl:169:13:@275ns:(report note): Reading GPR 0B 0000000000000000
+decode1.vhdl:671:13:@275ns:(report note): Decode insn_ori 616B2100 at 0000000000000024
+execute1.vhdl:810:21:@285ns:(report note): CPU 0 execute 000000000000001C op=op_compute wr=0B we='1' tag=3'1' 2nd='0'
+register_file.vhdl:70:21:@285ns:(report note): Writing GPR 0B 0000000000000000
+decode2.vhdl:314:21:@285ns:(report note): execute 0000000000000020 tag=0'1' rpt='0' 2nd='0' wr=0B
+control.vhdl:127:29:@285ns:(report note): tag 0 valid for gpr 0B
+control.vhdl:110:25:@285ns:(report note): tag 1 not valid
+control.vhdl:116:29:@285ns:(report note): tag 3 not recent
+icache.vhdl:617:21:@285ns:(report note): cache hit nia:0000000000000028 IR:'0' SM:'0' idx:00 tag:000000000000 way:0 RA:00000000000028
+fetch1.vhdl:122:17:@285ns:(report note): fetch1 rst:'0' IR:'0' P:'1' E:'0' 32:'0' I:'0' R:'0''0' S:'0' T:'0' nia:000000000000002C req:'1' FF:'0'
+decode1.vhdl:671:13:@285ns:(report note): Decode insn_ori 616B2100 at 0000000000000024
+register_file.vhdl:169:13:@285ns:(report note): Reading GPR 0B 0000000000000000
+decode1.vhdl:671:13:@285ns:(report note): Decode insn_oris 656B0000 at 0000000000000028
+decode1.vhdl:671:13:@285ns:(report note): Decode insn_subf 7D6A5850 at 0000000000000028
+register_file.vhdl:169:13:@285ns:(report note): Reading GPR 0B 0000000000000000
+execute1.vhdl:810:21:@295ns:(report note): CPU 0 execute 0000000000000020 op=op_compute wr=0B we='1' tag=0'1' 2nd='0'
+register_file.vhdl:70:21:@295ns:(report note): Writing GPR 0B 0000000000000000
+decode2.vhdl:314:21:@295ns:(report note): execute 0000000000000024 tag=1'1' rpt='0' 2nd='0' wr=0B
+control.vhdl:116:29:@295ns:(report note): tag 0 not recent
+control.vhdl:127:29:@295ns:(report note): tag 1 valid for gpr 0B
+control.vhdl:110:25:@295ns:(report note): tag 2 not valid
+icache.vhdl:617:21:@295ns:(report note): cache hit nia:000000000000002C IR:'0' SM:'0' idx:00 tag:000000000000 way:0 RA:0000000000002C
+fetch1.vhdl:122:17:@295ns:(report note): fetch1 rst:'0' IR:'0' P:'1' E:'0' 32:'0' I:'0' R:'0''0' S:'0' T:'0' nia:0000000000000030 req:'1' FF:'0'
+decode1.vhdl:671:13:@295ns:(report note): Decode insn_subf 7D6A5850 at 0000000000000028
+register_file.vhdl:169:13:@295ns:(report note): Reading GPR 0B 0000000000000000
+decode1.vhdl:671:13:@295ns:(report note): Decode insn_addi 396B003F at 000000000000002C
+register_file.vhdl:163:13:@295ns:(report note): Reading GPR 0A 0000000000002080
+register_file.vhdl:166:13:@295ns:(report note): Reading GPR 0B 0000000000000000
+execute1.vhdl:810:21:@305ns:(report note): CPU 0 execute 0000000000000024 op=op_compute wr=0B we='1' tag=1'1' 2nd='0'
+register_file.vhdl:70:21:@305ns:(report note): Writing GPR 0B 0000000000000000
+decode2.vhdl:314:21:@305ns:(report note): execute 0000000000000028 tag=2'1' rpt='0' 2nd='0' wr=0B
+control.vhdl:116:29:@305ns:(report note): tag 1 not recent
+control.vhdl:127:29:@305ns:(report note): tag 2 valid for gpr 0B
+control.vhdl:110:25:@305ns:(report note): tag 3 not valid
+icache.vhdl:617:21:@305ns:(report note): cache hit nia:0000000000000030 IR:'0' SM:'0' idx:00 tag:000000000000 way:0 RA:00000000000030
+fetch1.vhdl:122:17:@305ns:(report note): fetch1 rst:'0' IR:'0' P:'1' E:'0' 32:'0' I:'0' R:'0''0' S:'0' T:'0' nia:0000000000000034 req:'1' FF:'0'
+decode1.vhdl:671:13:@305ns:(report note): Decode insn_addi 396B003F at 000000000000002C
+register_file.vhdl:163:13:@305ns:(report note): Reading GPR 0B 0000000000000000
+register_file.vhdl:166:13:@305ns:(report note): Reading GPR 00 0000000000000000
+decode1.vhdl:671:13:@305ns:(report note): Decode insn_subf 7D6A5850 at 0000000000000030
+register_file.vhdl:163:13:@305ns:(report note): Reading GPR 0B 0000000000000000
+decode1.vhdl:671:13:@305ns:(report note): Decode insn_rldicl 796BD183 at 0000000000000030
+register_file.vhdl:163:13:@305ns:(report note): Reading GPR 0B 0000000000000000
+execute1.vhdl:810:21:@315ns:(report note): CPU 0 execute 0000000000000028 op=op_add wr=0B we='1' tag=2'1' 2nd='0'
+register_file.vhdl:70:21:@315ns:(report note): Writing GPR 0B 0000000000000000
+decode2.vhdl:314:21:@315ns:(report note): execute 000000000000002C tag=3'1' rpt='0' 2nd='0' wr=0B
+control.vhdl:110:25:@315ns:(report note): tag 0 not valid
+control.vhdl:116:29:@315ns:(report note): tag 2 not recent
+control.vhdl:127:29:@315ns:(report note): tag 3 valid for gpr 0B
+icache.vhdl:617:21:@315ns:(report note): cache hit nia:0000000000000034 IR:'0' SM:'0' idx:00 tag:000000000000 way:0 RA:00000000000034
+fetch1.vhdl:122:17:@315ns:(report note): fetch1 rst:'0' IR:'0' P:'1' E:'0' 32:'0' I:'0' R:'0''0' S:'0' T:'0' nia:0000000000000038 req:'1' FF:'0'
+decode1.vhdl:671:13:@315ns:(report note): Decode insn_rldicl 796BD183 at 0000000000000030
+register_file.vhdl:163:13:@315ns:(report note): Reading GPR 0B 0000000000000000
+decode1.vhdl:671:13:@315ns:(report note): Decode insn_bcrel 41820014 at 0000000000000034
+register_file.vhdl:169:13:@315ns:(report note): Reading GPR 0B 0000000000000000
+execute1.vhdl:810:21:@325ns:(report note): CPU 0 execute 000000000000002C op=op_add wr=0B we='1' tag=3'1' 2nd='0'
+register_file.vhdl:70:21:@325ns:(report note): Writing GPR 0B 0000000000002100
+decode2.vhdl:314:21:@325ns:(report note): execute 0000000000000030 tag=0'1' rpt='0' 2nd='0' wr=0B
+control.vhdl:127:29:@325ns:(report note): tag 0 valid for gpr 0B
+control.vhdl:110:25:@325ns:(report note): tag 1 not valid
+control.vhdl:116:29:@325ns:(report note): tag 3 not recent
+icache.vhdl:617:21:@325ns:(report note): cache hit nia:0000000000000038 IR:'0' SM:'0' idx:00 tag:000000000000 way:0 RA:00000000000038
+fetch1.vhdl:122:17:@325ns:(report note): fetch1 rst:'0' IR:'0' P:'1' E:'0' 32:'0' I:'0' R:'0''0' S:'0' T:'0' nia:000000000000003C req:'1' FF:'0'
+decode1.vhdl:671:13:@325ns:(report note): Decode insn_bcrel 41820014 at 0000000000000034
+register_file.vhdl:169:13:@325ns:(report note): Reading GPR 0C 0000000000000000
+decode1.vhdl:671:13:@325ns:(report note): Decode insn_rldicl 796BD183 at 0000000000000038
+cr_file.vhdl:84:13:@325ns:(report note): Reading CR 00000000
+decode1.vhdl:671:13:@325ns:(report note): Decode insn_mtspr 7D6903A6 at 0000000000000038
+execute1.vhdl:810:21:@335ns:(report note): CPU 0 execute 0000000000000030 op=op_compute wr=0B we='1' tag=0'1' 2nd='0'
+register_file.vhdl:70:21:@335ns:(report note): Writing GPR 0B 0000000000000080
+control.vhdl:110:25:@335ns:(report note): tag 2 not valid
+icache.vhdl:617:21:@335ns:(report note): cache hit nia:000000000000003C IR:'0' SM:'0' idx:00 tag:000000000000 way:0 RA:0000000000003C
+fetch1.vhdl:122:17:@335ns:(report note): fetch1 rst:'0' IR:'0' P:'1' E:'0' 32:'0' I:'0' R:'0''0' S:'0' T:'0' nia:0000000000000040 req:'1' FF:'0'
+decode1.vhdl:671:13:@335ns:(report note): Decode insn_mtspr 7D6903A6 at 0000000000000038
+decode1.vhdl:671:13:@335ns:(report note): Decode insn_dcbz 7C0057EC at 000000000000003C
+register_file.vhdl:169:13:@335ns:(report note): Reading GPR 0B 0000000000000080
+decode1.vhdl:671:13:@335ns:(report note): Decode insn_dcbz 7C0057EC at 000000000000003C
+register_file.vhdl:70:21:@345ns:(report note): Writing GPR 0B 00000000000000BF
+decode2.vhdl:314:21:@345ns:(report note): execute 0000000000000034 tag=1'1' rpt='0' 2nd='0' wr=00
+control.vhdl:110:25:@345ns:(report note): tag 3 not valid
+icache.vhdl:725:25:@345ns:(report note): cache miss nia:0000000000000040 IR:'0' SM:'0' idx:01 tag:000000000000 RA:00000000000040
+decode1.vhdl:671:13:@345ns:(report note): Decode insn_dcbz 7C0057EC at 000000000000003C
+register_file.vhdl:169:13:@345ns:(report note): Reading GPR 0B 00000000000000BF
+decode1.vhdl:671:13:@345ns:(report note): Decode insn_dcbz 7C0057EC at 000000000000003C
+sim_bram.vhdl:59:17:@355ns:(report note): RAM reading from 00040 returns 4200FFF8394A0040
+execute1.vhdl:810:21:@355ns:(report note): CPU 0 execute 0000000000000034 op=op_bc wr=00 we='0' tag=1'1' 2nd='0'
+cr_file.vhdl:65:17:@355ns:(report note): Writing 40000000 to CR mask 80
+register_file.vhdl:70:21:@355ns:(report note): Writing GPR 0B 0000000000000002
+decode2.vhdl:314:21:@355ns:(report note): execute 0000000000000038 tag=2'1' rpt='0' 2nd='0' wr=00
+control.vhdl:110:25:@355ns:(report note): tag 0 not valid
+decode1.vhdl:671:13:@355ns:(report note): Decode insn_dcbz 7C0057EC at 000000000000003C
+register_file.vhdl:169:13:@355ns:(report note): Reading GPR 00 0000000000000000
+execute1.vhdl:1512:21:@355ns:(report note): MTSPR to SPR 9=0000000000000000
+register_file.vhdl:166:13:@355ns:(report note): Reading GPR 0A 0000000000002080
+execute1.vhdl:1512:21:@355ns:(report note): MTSPR to SPR 9=0000000000000002
+execute1.vhdl:1512:21:@355ns:(report note): MTSPR to SPR 9=0000000000000002
+execute1.vhdl:1512:21:@355ns:(report note): MTSPR to SPR 9=0000000000000002
+sim_bram.vhdl:59:17:@365ns:(report note): RAM reading from 00048 returns 602100003C200000
+execute1.vhdl:810:21:@365ns:(report note): CPU 0 execute 0000000000000038 op=op_mtspr wr=00 we='0' tag=2'1' 2nd='0'
+decode2.vhdl:314:21:@365ns:(report note): execute 000000000000003C tag=3'1' rpt='0' 2nd='0' wr=00
+register_file.vhdl:166:13:@365ns:(report note): Reading GPR 00 0000000000000000
+sim_bram.vhdl:59:17:@375ns:(report note): RAM reading from 00050 returns 64210000782107C6
+execute1.vhdl:810:21:@375ns:(report note): CPU 0 execute 000000000000003C op=op_dcbz wr=00 we='0' tag=3'1' 2nd='0'
+execute1.vhdl:779:17:@375ns:(report note): writing odd spr 5 data=0000000000000002
+control.vhdl:110:25:@375ns:(report note): tag 1 not valid
+sim_bram.vhdl:59:17:@385ns:(report note): RAM reading from 00058 returns 3800000060216100
+control.vhdl:110:25:@385ns:(report note): tag 2 not valid
+dcache.vhdl:976:13:@385ns:(assertion error): Assertion violation
+sim_bram.vhdl:59:17:@395ns:(report note): RAM reading from 00060 returns 3D400000F801FFF1
+dcache.vhdl:1561:21:@395ns:(report note): victim way:0
+dcache.vhdl:866:21:@395ns:(report note): PLRU update, index=02 way=0
+icache.vhdl:617:21:@395ns:(report note): cache hit nia:0000000000000040 IR:'0' SM:'0' idx:01 tag:000000000000 way:1 RA:00000000000040
+fetch1.vhdl:122:17:@395ns:(report note): fetch1 rst:'0' IR:'0' P:'1' E:'0' 32:'0' I:'0' R:'0''0' S:'0' T:'0' nia:0000000000000044 req:'1' FF:'0'
+decode1.vhdl:671:13:@395ns:(report note): Decode insn_illegal 00000000 at 0000000000000040
+decode1.vhdl:671:13:@395ns:(report note): Decode insn_addi 394A0040 at 0000000000000040
+sim_bram.vhdl:59:17:@405ns:(report note): RAM reading from 00068 returns 794A07C6614A0000
+icache.vhdl:617:21:@405ns:(report note): cache hit nia:0000000000000044 IR:'0' SM:'0' idx:01 tag:000000000000 way:1 RA:00000000000044
+fetch1.vhdl:122:17:@405ns:(report note): fetch1 rst:'0' IR:'0' P:'1' E:'0' 32:'0' I:'0' R:'0''0' S:'0' T:'0' nia:0000000000000048 req:'1' FF:'0'
+decode1.vhdl:671:13:@405ns:(report note): Decode insn_addi 394A0040 at 0000000000000040
+decode1.vhdl:671:13:@405ns:(report note): Decode insn_bcrel 4200FFF8 at 0000000000000044
+register_file.vhdl:163:13:@405ns:(report note): Reading GPR 0A 0000000000002080
+sim_bram.vhdl:59:17:@415ns:(report note): RAM reading from 00070 returns 614A0098654A0000
+decode2.vhdl:314:21:@415ns:(report note): execute 0000000000000040 tag=0'1' rpt='0' 2nd='0' wr=0A
+control.vhdl:127:29:@415ns:(report note): tag 0 valid for gpr 0A
+fetch1.vhdl:122:17:@415ns:(report note): fetch1 rst:'0' IR:'0' P:'1' E:'0' 32:'0' I:'0' R:'0''0' S:'0' T:'0' nia:000000000000004C req:'1' FF:'0'
+decode1.vhdl:671:13:@415ns:(report note): Decode insn_bcrel 4200FFF8 at 0000000000000044
+register_file.vhdl:163:13:@415ns:(report note): Reading GPR 00 0000000000000000
+cr_file.vhdl:84:13:@415ns:(report note): Reading CR 40000000
+sim_bram.vhdl:59:17:@425ns:(report note): RAM reading from 00078 returns 3D8000007D5043A6
+fetch1.vhdl:122:17:@425ns:(report note): fetch1 rst:'0' IR:'0' P:'1' E:'0' 32:'0' I:'0' R:'0''1' S:'1' T:'0' nia:000000000000003C req:'1' FF:'0'
+sim_bram.vhdl:53:17:@455ns:(report note): RAM writing 0000000000000000 to 02080 sel:FF
+sim_bram.vhdl:53:17:@465ns:(report note): RAM writing 0000000000000000 to 02088 sel:FF
+dcache.vhdl:1224:17:@465ns:(report note): completing store or load miss data=3D8000007D5043A6
+sim_bram.vhdl:53:17:@475ns:(report note): RAM writing 0000000000000000 to 02090 sel:FF
+execute1.vhdl:810:21:@475ns:(report note): CPU 0 execute 0000000000000040 op=op_add wr=0A we='1' tag=0'1' 2nd='0'
+decode2.vhdl:314:21:@475ns:(report note): execute 0000000000000044 tag=1'1' rpt='0' 2nd='0' wr=00
+control.vhdl:110:25:@475ns:(report note): tag 3 not valid
+icache.vhdl:617:21:@475ns:(report note): cache hit nia:000000000000003C IR:'0' SM:'0' idx:00 tag:000000000000 way:0 RA:0000000000003C
+fetch1.vhdl:122:17:@475ns:(report note): fetch1 rst:'0' IR:'0' P:'1' E:'0' 32:'0' I:'0' R:'0''0' S:'0' T:'0' nia:0000000000000040 req:'1' FF:'0'
+decode1.vhdl:671:13:@475ns:(report note): Decode insn_illegal 00000000 at 000000000000003C
+decode1.vhdl:671:13:@475ns:(report note): Decode insn_dcbz 7C0057EC at 000000000000003C
+sim_bram.vhdl:53:17:@485ns:(report note): RAM writing 0000000000000000 to 02098 sel:FF
+execute1.vhdl:810:21:@485ns:(report note): CPU 0 execute 0000000000000044 op=op_bc wr=00 we='0' tag=1'1' 2nd='0'
+icache.vhdl:617:21:@485ns:(report note): cache hit nia:0000000000000040 IR:'0' SM:'0' idx:01 tag:000000000000 way:1 RA:00000000000040
+fetch1.vhdl:122:17:@485ns:(report note): fetch1 rst:'0' IR:'0' P:'1' E:'0' 32:'0' I:'0' R:'0''0' S:'0' T:'0' nia:0000000000000044 req:'1' FF:'0'
+decode1.vhdl:671:13:@485ns:(report note): Decode insn_dcbz 7C0057EC at 000000000000003C
+decode1.vhdl:671:13:@485ns:(report note): Decode insn_illegal 00000000 at 0000000000000040
+register_file.vhdl:166:13:@485ns:(report note): Reading GPR 0A 0000000000002080
+decode1.vhdl:671:13:@485ns:(report note): Decode insn_addi 394A0040 at 0000000000000040
+sim_bram.vhdl:53:17:@495ns:(report note): RAM writing 0000000000000000 to 020A0 sel:FF
+execute1.vhdl:779:17:@495ns:(report note): writing odd spr 5 data=0000000000000001
+register_file.vhdl:70:21:@495ns:(report note): Writing GPR 0A 00000000000020C0
+decode2.vhdl:314:21:@495ns:(report note): execute 000000000000003C tag=2'1' rpt='0' 2nd='0' wr=00
+control.vhdl:110:25:@495ns:(report note): tag 0 not valid
+icache.vhdl:617:21:@495ns:(report note): cache hit nia:0000000000000044 IR:'0' SM:'0' idx:01 tag:000000000000 way:1 RA:00000000000044
+fetch1.vhdl:122:17:@495ns:(report note): fetch1 rst:'0' IR:'0' P:'1' E:'0' 32:'0' I:'0' R:'0''0' S:'0' T:'0' nia:0000000000000048 req:'1' FF:'0'
+decode1.vhdl:671:13:@495ns:(report note): Decode insn_addi 394A0040 at 0000000000000040
+register_file.vhdl:166:13:@495ns:(report note): Reading GPR 00 0000000000000000
+decode1.vhdl:671:13:@495ns:(report note): Decode insn_bcrel 4200FFF8 at 0000000000000044
+register_file.vhdl:163:13:@495ns:(report note): Reading GPR 0A 00000000000020C0
+sim_bram.vhdl:53:17:@505ns:(report note): RAM writing 0000000000000000 to 020A8 sel:FF
+execute1.vhdl:810:21:@505ns:(report note): CPU 0 execute 000000000000003C op=op_dcbz wr=00 we='0' tag=2'1' 2nd='0'
+decode2.vhdl:314:21:@505ns:(report note): execute 0000000000000040 tag=3'1' rpt='0' 2nd='0' wr=0A
+control.vhdl:110:25:@505ns:(report note): tag 1 not valid
+control.vhdl:127:29:@505ns:(report note): tag 3 valid for gpr 0A
+fetch1.vhdl:122:17:@505ns:(report note): fetch1 rst:'0' IR:'0' P:'1' E:'0' 32:'0' I:'0' R:'0''0' S:'0' T:'0' nia:000000000000004C req:'1' FF:'0'
+decode1.vhdl:671:13:@505ns:(report note): Decode insn_bcrel 4200FFF8 at 0000000000000044
+register_file.vhdl:163:13:@505ns:(report note): Reading GPR 00 0000000000000000
+cr_file.vhdl:84:13:@505ns:(report note): Reading CR 40000000
+sim_bram.vhdl:53:17:@515ns:(report note): RAM writing 0000000000000000 to 020B0 sel:FF
+execute1.vhdl:810:21:@515ns:(report note): CPU 0 execute 0000000000000040 op=op_add wr=0A we='1' tag=3'1' 2nd='0'
+decode2.vhdl:314:21:@515ns:(report note): execute 0000000000000044 tag=0'1' rpt='0' 2nd='0' wr=00
+fetch1.vhdl:122:17:@515ns:(report note): fetch1 rst:'0' IR:'0' P:'1' E:'0' 32:'0' I:'0' R:'0''1' S:'0' T:'0' nia:000000000000003C req:'1' FF:'0'
+sim_bram.vhdl:53:17:@525ns:(report note): RAM writing 0000000000000000 to 020B8 sel:FF
+dcache.vhdl:1561:21:@525ns:(report note): victim way:0
+dcache.vhdl:866:21:@525ns:(report note): PLRU update, index=03 way=0
+sim_bram.vhdl:53:17:@555ns:(report note): RAM writing 0000000000000000 to 020C0 sel:FF
+sim_bram.vhdl:53:17:@565ns:(report note): RAM writing 0000000000000000 to 020C8 sel:FF
+dcache.vhdl:1224:17:@565ns:(report note): completing store or load miss data=3D8000007D5043A6
+sim_bram.vhdl:53:17:@575ns:(report note): RAM writing 0000000000000000 to 020D0 sel:FF
+execute1.vhdl:810:21:@575ns:(report note): CPU 0 execute 0000000000000044 op=op_bc wr=00 we='0' tag=0'1' 2nd='0'
+control.vhdl:110:25:@575ns:(report note): tag 2 not valid
+icache.vhdl:617:21:@575ns:(report note): cache hit nia:000000000000003C IR:'0' SM:'0' idx:00 tag:000000000000 way:0 RA:0000000000003C
+fetch1.vhdl:122:17:@575ns:(report note): fetch1 rst:'0' IR:'0' P:'1' E:'0' 32:'0' I:'0' R:'0''0' S:'0' T:'0' nia:0000000000000040 req:'1' FF:'0'
+decode1.vhdl:671:13:@575ns:(report note): Decode insn_illegal 00000000 at 000000000000003C
+decode1.vhdl:671:13:@575ns:(report note): Decode insn_dcbz 7C0057EC at 000000000000003C
+sim_bram.vhdl:53:17:@585ns:(report note): RAM writing 0000000000000000 to 020D8 sel:FF
+execute1.vhdl:779:17:@585ns:(report note): writing odd spr 5 data=0000000000000000
+register_file.vhdl:70:21:@585ns:(report note): Writing GPR 0A 0000000000002100
+control.vhdl:110:25:@585ns:(report note): tag 3 not valid
+icache.vhdl:617:21:@585ns:(report note): cache hit nia:0000000000000040 IR:'0' SM:'0' idx:01 tag:000000000000 way:1 RA:00000000000040
+fetch1.vhdl:122:17:@585ns:(report note): fetch1 rst:'0' IR:'0' P:'1' E:'0' 32:'0' I:'0' R:'0''0' S:'0' T:'0' nia:0000000000000044 req:'1' FF:'0'
+decode1.vhdl:671:13:@585ns:(report note): Decode insn_dcbz 7C0057EC at 000000000000003C
+decode1.vhdl:671:13:@585ns:(report note): Decode insn_illegal 00000000 at 0000000000000040
+register_file.vhdl:166:13:@585ns:(report note): Reading GPR 0A 0000000000002100
+decode1.vhdl:671:13:@585ns:(report note): Decode insn_addi 394A0040 at 0000000000000040
+sim_bram.vhdl:53:17:@595ns:(report note): RAM writing 0000000000000000 to 020E0 sel:FF
+fetch1.vhdl:122:17:@595ns:(report note): fetch1 rst:'0' IR:'0' P:'1' E:'0' 32:'0' I:'0' R:'1''0' S:'0' T:'0' nia:0000000000000048 req:'1' FF:'0'
+decode1.vhdl:671:13:@595ns:(report note): Decode insn_addi 394A0040 at 0000000000000040
+register_file.vhdl:166:13:@595ns:(report note): Reading GPR 00 0000000000000000
+sim_bram.vhdl:53:17:@605ns:(report note): RAM writing 0000000000000000 to 020E8 sel:FF
+icache.vhdl:617:21:@605ns:(report note): cache hit nia:0000000000000048 IR:'0' SM:'0' idx:01 tag:000000000000 way:1 RA:00000000000048
+fetch1.vhdl:122:17:@605ns:(report note): fetch1 rst:'0' IR:'0' P:'1' E:'0' 32:'0' I:'0' R:'0''0' S:'0' T:'0' nia:000000000000004C req:'1' FF:'0'
+decode1.vhdl:671:13:@605ns:(report note): Decode insn_addi 394A0040 at 0000000000000048
+cr_file.vhdl:84:13:@605ns:(report note): Reading CR 40000000
+decode1.vhdl:671:13:@605ns:(report note): Decode insn_addis 3C200000 at 0000000000000048
+sim_bram.vhdl:53:17:@615ns:(report note): RAM writing 0000000000000000 to 020F0 sel:FF
+icache.vhdl:617:21:@615ns:(report note): cache hit nia:000000000000004C IR:'0' SM:'0' idx:01 tag:000000000000 way:1 RA:0000000000004C
+fetch1.vhdl:122:17:@615ns:(report note): fetch1 rst:'0' IR:'0' P:'1' E:'0' 32:'0' I:'0' R:'0''0' S:'0' T:'0' nia:0000000000000050 req:'1' FF:'0'
+decode1.vhdl:671:13:@615ns:(report note): Decode insn_addis 3C200000 at 0000000000000048
+decode1.vhdl:671:13:@615ns:(report note): Decode insn_ori 60210000 at 000000000000004C
+sim_bram.vhdl:53:17:@625ns:(report note): RAM writing 0000000000000000 to 020F8 sel:FF
+decode2.vhdl:314:21:@625ns:(report note): execute 0000000000000048 tag=1'1' rpt='0' 2nd='0' wr=01
+control.vhdl:127:29:@625ns:(report note): tag 1 valid for gpr 01
+icache.vhdl:617:21:@625ns:(report note): cache hit nia:0000000000000050 IR:'0' SM:'0' idx:01 tag:000000000000 way:1 RA:00000000000050
+fetch1.vhdl:122:17:@625ns:(report note): fetch1 rst:'0' IR:'0' P:'1' E:'0' 32:'0' I:'0' R:'0''0' S:'0' T:'0' nia:0000000000000054 req:'1' FF:'0'
+decode1.vhdl:671:13:@625ns:(report note): Decode insn_ori 60210000 at 000000000000004C
+decode1.vhdl:671:13:@625ns:(report note): Decode insn_addis 3C200000 at 0000000000000050
+register_file.vhdl:169:13:@625ns:(report note): Reading GPR 01 0000000000000000
+decode1.vhdl:671:13:@625ns:(report note): Decode insn_rldicr 782107C6 at 0000000000000050
+execute1.vhdl:810:21:@635ns:(report note): CPU 0 execute 0000000000000048 op=op_add wr=01 we='1' tag=1'1' 2nd='0'
+decode2.vhdl:314:21:@635ns:(report note): execute 000000000000004C tag=2'1' rpt='0' 2nd='0' wr=01
+control.vhdl:116:29:@635ns:(report note): tag 1 not recent
+control.vhdl:127:29:@635ns:(report note): tag 2 valid for gpr 01
+icache.vhdl:617:21:@635ns:(report note): cache hit nia:0000000000000054 IR:'0' SM:'0' idx:01 tag:000000000000 way:1 RA:00000000000054
+fetch1.vhdl:122:17:@635ns:(report note): fetch1 rst:'0' IR:'0' P:'1' E:'0' 32:'0' I:'0' R:'0''0' S:'0' T:'0' nia:0000000000000058 req:'1' FF:'0'
+decode1.vhdl:671:13:@635ns:(report note): Decode insn_rldicr 782107C6 at 0000000000000050
+decode1.vhdl:671:13:@635ns:(report note): Decode insn_oris 64210000 at 0000000000000054
+execute1.vhdl:810:21:@645ns:(report note): CPU 0 execute 000000000000004C op=op_compute wr=01 we='1' tag=2'1' 2nd='0'
+decode2.vhdl:314:21:@645ns:(report note): execute 0000000000000050 tag=3'1' rpt='0' 2nd='0' wr=01
+control.vhdl:116:29:@645ns:(report note): tag 2 not recent
+control.vhdl:127:29:@645ns:(report note): tag 3 valid for gpr 01
+icache.vhdl:617:21:@645ns:(report note): cache hit nia:0000000000000058 IR:'0' SM:'0' idx:01 tag:000000000000 way:1 RA:00000000000058
+fetch1.vhdl:122:17:@645ns:(report note): fetch1 rst:'0' IR:'0' P:'1' E:'0' 32:'0' I:'0' R:'0''0' S:'0' T:'0' nia:000000000000005C req:'1' FF:'0'
+decode1.vhdl:671:13:@645ns:(report note): Decode insn_oris 64210000 at 0000000000000054
+decode1.vhdl:671:13:@645ns:(report note): Decode insn_rldicr 782107C6 at 0000000000000058
+decode1.vhdl:671:13:@645ns:(report note): Decode insn_ori 60216100 at 0000000000000058
+execute1.vhdl:810:21:@655ns:(report note): CPU 0 execute 0000000000000050 op=op_compute wr=01 we='1' tag=3'1' 2nd='0'
+register_file.vhdl:70:21:@655ns:(report note): Writing GPR 01 0000000000000000
+decode2.vhdl:314:21:@655ns:(report note): execute 0000000000000054 tag=0'1' rpt='0' 2nd='0' wr=01
+control.vhdl:127:29:@655ns:(report note): tag 0 valid for gpr 01
+control.vhdl:110:25:@655ns:(report note): tag 1 not valid
+control.vhdl:116:29:@655ns:(report note): tag 3 not recent
+icache.vhdl:617:21:@655ns:(report note): cache hit nia:000000000000005C IR:'0' SM:'0' idx:01 tag:000000000000 way:1 RA:0000000000005C
+fetch1.vhdl:122:17:@655ns:(report note): fetch1 rst:'0' IR:'0' P:'1' E:'0' 32:'0' I:'0' R:'0''0' S:'0' T:'0' nia:0000000000000060 req:'1' FF:'0'
+decode1.vhdl:671:13:@655ns:(report note): Decode insn_ori 60216100 at 0000000000000058
+register_file.vhdl:169:13:@655ns:(report note): Reading GPR 01 0000000000000000
+decode1.vhdl:671:13:@655ns:(report note): Decode insn_addi 38000000 at 000000000000005C
+execute1.vhdl:810:21:@665ns:(report note): CPU 0 execute 0000000000000054 op=op_compute wr=01 we='1' tag=0'1' 2nd='0'
+register_file.vhdl:70:21:@665ns:(report note): Writing GPR 01 0000000000000000
+decode2.vhdl:314:21:@665ns:(report note): execute 0000000000000058 tag=1'1' rpt='0' 2nd='0' wr=01
+control.vhdl:116:29:@665ns:(report note): tag 0 not recent
+control.vhdl:127:29:@665ns:(report note): tag 1 valid for gpr 01
+control.vhdl:110:25:@665ns:(report note): tag 2 not valid
+icache.vhdl:617:21:@665ns:(report note): cache hit nia:0000000000000060 IR:'0' SM:'0' idx:01 tag:000000000000 way:1 RA:00000000000060
+fetch1.vhdl:122:17:@665ns:(report note): fetch1 rst:'0' IR:'0' P:'1' E:'0' 32:'0' I:'0' R:'0''0' S:'0' T:'0' nia:0000000000000064 req:'1' FF:'0'
+decode1.vhdl:671:13:@665ns:(report note): Decode insn_addi 38000000 at 000000000000005C
+register_file.vhdl:169:13:@665ns:(report note): Reading GPR 00 0000000000000000
+decode1.vhdl:671:13:@665ns:(report note): Decode insn_ori 60216100 at 0000000000000060
+decode1.vhdl:671:13:@665ns:(report note): Decode insn_stdu F801FFF1 at 0000000000000060
+execute1.vhdl:810:21:@675ns:(report note): CPU 0 execute 0000000000000058 op=op_compute wr=01 we='1' tag=1'1' 2nd='0'
+register_file.vhdl:70:21:@675ns:(report note): Writing GPR 01 0000000000000000
+decode2.vhdl:314:21:@675ns:(report note): execute 000000000000005C tag=2'1' rpt='0' 2nd='0' wr=00
+control.vhdl:127:29:@675ns:(report note): tag 2 valid for gpr 00
+control.vhdl:110:25:@675ns:(report note): tag 3 not valid
+icache.vhdl:617:21:@675ns:(report note): cache hit nia:0000000000000064 IR:'0' SM:'0' idx:01 tag:000000000000 way:1 RA:00000000000064
+fetch1.vhdl:122:17:@675ns:(report note): fetch1 rst:'0' IR:'0' P:'1' E:'0' 32:'0' I:'0' R:'0''0' S:'0' T:'0' nia:0000000000000068 req:'1' FF:'0'
+decode1.vhdl:671:13:@675ns:(report note): Decode insn_stdu F801FFF1 at 0000000000000060
+decode1.vhdl:671:13:@675ns:(report note): Decode insn_addis 3D400000 at 0000000000000064
+register_file.vhdl:163:13:@675ns:(report note): Reading GPR 01 0000000000000000
+register_file.vhdl:169:13:@675ns:(report note): Reading GPR 00 0000000000000000
+execute1.vhdl:810:21:@685ns:(report note): CPU 0 execute 000000000000005C op=op_add wr=00 we='1' tag=2'1' 2nd='0'
+register_file.vhdl:70:21:@685ns:(report note): Writing GPR 01 0000000000000000
+decode2.vhdl:314:21:@685ns:(report note): execute 0000000000000060 tag=3'1' rpt='0' 2nd='0' wr=01
+control.vhdl:110:25:@685ns:(report note): tag 0 not valid
+control.vhdl:116:29:@685ns:(report note): tag 1 not recent
+control.vhdl:127:29:@685ns:(report note): tag 3 valid for gpr 01
+icache.vhdl:617:21:@685ns:(report note): cache hit nia:0000000000000068 IR:'0' SM:'0' idx:01 tag:000000000000 way:1 RA:00000000000068
+fetch1.vhdl:122:17:@685ns:(report note): fetch1 rst:'0' IR:'0' P:'1' E:'0' 32:'0' I:'0' R:'0''0' S:'0' T:'0' nia:000000000000006C req:'1' FF:'0'
+decode1.vhdl:671:13:@685ns:(report note): Decode insn_addis 3D400000 at 0000000000000064
+register_file.vhdl:163:13:@685ns:(report note): Reading GPR 00 0000000000000000
+register_file.vhdl:169:13:@685ns:(report note): Reading GPR 0A 0000000000002100
+decode1.vhdl:671:13:@685ns:(report note): Decode insn_stdu F801FFF1 at 0000000000000068
+decode1.vhdl:671:13:@685ns:(report note): Decode insn_ori 614A0000 at 0000000000000068
+execute1.vhdl:810:21:@695ns:(report note): CPU 0 execute 0000000000000060 op=op_store wr=01 we='1' tag=3'1' 2nd='0'
+register_file.vhdl:70:21:@695ns:(report note): Writing GPR 01 0000000000006100
+decode2.vhdl:314:21:@695ns:(report note): execute 0000000000000064 tag=0'1' rpt='0' 2nd='0' wr=0A
+control.vhdl:127:29:@695ns:(report note): tag 0 valid for gpr 0A
+control.vhdl:110:25:@695ns:(report note): tag 1 not valid
+icache.vhdl:617:21:@695ns:(report note): cache hit nia:000000000000006C IR:'0' SM:'0' idx:01 tag:000000000000 way:1 RA:0000000000006C
+fetch1.vhdl:122:17:@695ns:(report note): fetch1 rst:'0' IR:'0' P:'1' E:'0' 32:'0' I:'0' R:'0''0' S:'0' T:'0' nia:0000000000000070 req:'1' FF:'0'
+decode1.vhdl:671:13:@695ns:(report note): Decode insn_ori 614A0000 at 0000000000000068
+decode1.vhdl:671:13:@695ns:(report note): Decode insn_rldicr 794A07C6 at 000000000000006C
+register_file.vhdl:169:13:@695ns:(report note): Reading GPR 0A 0000000000002100
+execute1.vhdl:810:21:@705ns:(report note): CPU 0 execute 0000000000000064 op=op_add wr=0A we='1' tag=0'1' 2nd='0'
+register_file.vhdl:70:21:@705ns:(report note): Writing GPR 00 0000000000000000
+decode2.vhdl:314:21:@705ns:(report note): execute 0000000000000068 tag=1'1' rpt='0' 2nd='0' wr=0A
+control.vhdl:116:29:@705ns:(report note): tag 0 not recent
+control.vhdl:127:29:@705ns:(report note): tag 1 valid for gpr 0A
+control.vhdl:110:25:@705ns:(report note): tag 2 not valid
+icache.vhdl:617:21:@705ns:(report note): cache hit nia:0000000000000070 IR:'0' SM:'0' idx:01 tag:000000000000 way:1 RA:00000000000070
+fetch1.vhdl:122:17:@705ns:(report note): fetch1 rst:'0' IR:'0' P:'1' E:'0' 32:'0' I:'0' R:'0''0' S:'0' T:'0' nia:0000000000000074 req:'1' FF:'0'
+decode1.vhdl:671:13:@705ns:(report note): Decode insn_rldicr 794A07C6 at 000000000000006C
+register_file.vhdl:169:13:@705ns:(report note): Reading GPR 0A 0000000000002100
+dcache.vhdl:1224:17:@705ns:(report note): completing store or load miss data=3D8000007D5043A6
+decode1.vhdl:671:13:@705ns:(report note): Decode insn_ori 614A0000 at 0000000000000070
+decode1.vhdl:671:13:@705ns:(report note): Decode insn_oris 654A0000 at 0000000000000070
+sim_bram.vhdl:53:17:@715ns:(report note): RAM writing 0000000000000000 to 060F0 sel:FF
+execute1.vhdl:810:21:@715ns:(report note): CPU 0 execute 0000000000000068 op=op_compute wr=0A we='1' tag=1'1' 2nd='0'
+register_file.vhdl:70:21:@715ns:(report note): Writing GPR 01 00000000000060F0
+decode2.vhdl:314:21:@715ns:(report note): execute 000000000000006C tag=2'1' rpt='0' 2nd='0' wr=0A
+control.vhdl:116:29:@715ns:(report note): tag 1 not recent
+control.vhdl:127:29:@715ns:(report note): tag 2 valid for gpr 0A
+control.vhdl:110:25:@715ns:(report note): tag 3 not valid
+icache.vhdl:617:21:@715ns:(report note): cache hit nia:0000000000000074 IR:'0' SM:'0' idx:01 tag:000000000000 way:1 RA:00000000000074
+fetch1.vhdl:122:17:@715ns:(report note): fetch1 rst:'0' IR:'0' P:'1' E:'0' 32:'0' I:'0' R:'0''0' S:'0' T:'0' nia:0000000000000078 req:'1' FF:'0'
+decode1.vhdl:671:13:@715ns:(report note): Decode insn_oris 654A0000 at 0000000000000070
+register_file.vhdl:169:13:@715ns:(report note): Reading GPR 0A 0000000000002100
+decode1.vhdl:671:13:@715ns:(report note): Decode insn_ori 614A0098 at 0000000000000074
+execute1.vhdl:810:21:@725ns:(report note): CPU 0 execute 000000000000006C op=op_compute wr=0A we='1' tag=2'1' 2nd='0'
+register_file.vhdl:70:21:@725ns:(report note): Writing GPR 0A 0000000000000000
+decode2.vhdl:314:21:@725ns:(report note): execute 0000000000000070 tag=3'1' rpt='0' 2nd='0' wr=0A
+control.vhdl:110:25:@725ns:(report note): tag 0 not valid
+control.vhdl:116:29:@725ns:(report note): tag 2 not recent
+control.vhdl:127:29:@725ns:(report note): tag 3 valid for gpr 0A
+icache.vhdl:617:21:@725ns:(report note): cache hit nia:0000000000000078 IR:'0' SM:'0' idx:01 tag:000000000000 way:1 RA:00000000000078
+fetch1.vhdl:122:17:@725ns:(report note): fetch1 rst:'0' IR:'0' P:'1' E:'0' 32:'0' I:'0' R:'0''0' S:'0' T:'0' nia:000000000000007C req:'1' FF:'0'
+decode1.vhdl:671:13:@725ns:(report note): Decode insn_ori 614A0098 at 0000000000000074
+register_file.vhdl:169:13:@725ns:(report note): Reading GPR 0A 0000000000000000
+decode1.vhdl:671:13:@725ns:(report note): Decode insn_oris 654A0000 at 0000000000000078
+decode1.vhdl:671:13:@725ns:(report note): Decode insn_mtspr 7D5043A6 at 0000000000000078
+execute1.vhdl:810:21:@735ns:(report note): CPU 0 execute 0000000000000070 op=op_compute wr=0A we='1' tag=3'1' 2nd='0'
+register_file.vhdl:70:21:@735ns:(report note): Writing GPR 0A 0000000000000000
+decode2.vhdl:314:21:@735ns:(report note): execute 0000000000000074 tag=0'1' rpt='0' 2nd='0' wr=0A
+control.vhdl:127:29:@735ns:(report note): tag 0 valid for gpr 0A
+control.vhdl:110:25:@735ns:(report note): tag 1 not valid
+control.vhdl:116:29:@735ns:(report note): tag 3 not recent
+icache.vhdl:617:21:@735ns:(report note): cache hit nia:000000000000007C IR:'0' SM:'0' idx:01 tag:000000000000 way:1 RA:0000000000007C
+fetch1.vhdl:122:17:@735ns:(report note): fetch1 rst:'0' IR:'0' P:'1' E:'0' 32:'0' I:'0' R:'0''0' S:'0' T:'0' nia:0000000000000080 req:'1' FF:'0'
+decode1.vhdl:671:13:@735ns:(report note): Decode insn_mtspr 7D5043A6 at 0000000000000078
+register_file.vhdl:169:13:@735ns:(report note): Reading GPR 0A 0000000000000000
+decode1.vhdl:671:13:@735ns:(report note): Decode insn_addis 3D800000 at 000000000000007C
+execute1.vhdl:810:21:@745ns:(report note): CPU 0 execute 0000000000000074 op=op_compute wr=0A we='1' tag=0'1' 2nd='0'
+register_file.vhdl:70:21:@745ns:(report note): Writing GPR 0A 0000000000000000
+decode2.vhdl:314:21:@745ns:(report note): execute 0000000000000078 tag=1'1' rpt='0' 2nd='0' wr=00
+control.vhdl:110:25:@745ns:(report note): tag 2 not valid
+icache.vhdl:725:25:@745ns:(report note): cache miss nia:0000000000000080 IR:'0' SM:'0' idx:02 tag:000000000000 RA:00000000000080
+decode1.vhdl:671:13:@745ns:(report note): Decode insn_addis 3D800000 at 000000000000007C
+register_file.vhdl:169:13:@745ns:(report note): Reading GPR 0C 0000000000000000
+execute1.vhdl:1512:21:@745ns:(report note): MTSPR to SPR 272=0000000000000000
+execute1.vhdl:1512:21:@745ns:(report note): MTSPR to SPR 272=0000000000000098
+execute1.vhdl:1512:21:@745ns:(report note): MTSPR to SPR 272=0000000000000098
+execute1.vhdl:1512:21:@745ns:(report note): MTSPR to SPR 272=0000000000000098
+sim_bram.vhdl:59:17:@755ns:(report note): RAM reading from 00080 returns 798C07C6618C0000
+execute1.vhdl:810:21:@755ns:(report note): CPU 0 execute 0000000000000078 op=op_mtspr wr=00 we='0' tag=1'1' 2nd='0'
+register_file.vhdl:70:21:@755ns:(report note): Writing GPR 0A 0000000000000000
+decode2.vhdl:314:21:@755ns:(report note): execute 000000000000007C tag=2'1' rpt='0' 2nd='0' wr=0C
+control.vhdl:127:29:@755ns:(report note): tag 2 valid for gpr 0C
+control.vhdl:110:25:@755ns:(report note): tag 3 not valid
+sim_bram.vhdl:59:17:@765ns:(report note): RAM reading from 00088 returns 618C1000658C0000
+execute1.vhdl:810:21:@765ns:(report note): CPU 0 execute 000000000000007C op=op_add wr=0C we='1' tag=2'1' 2nd='0'
+execute1.vhdl:773:17:@765ns:(report note): writing even spr 2 data=0000000000000098
+register_file.vhdl:70:21:@765ns:(report note): Writing GPR 0A 0000000000000098
+control.vhdl:110:25:@765ns:(report note): tag 0 not valid
+sim_bram.vhdl:59:17:@775ns:(report note): RAM reading from 00090 returns 4E8004217D8903A6
+control.vhdl:110:25:@775ns:(report note): tag 1 not valid
+sim_bram.vhdl:59:17:@785ns:(report note): RAM reading from 00098 returns 4800000000000200
+register_file.vhdl:70:21:@785ns:(report note): Writing GPR 0C 0000000000000000
+control.vhdl:110:25:@785ns:(report note): tag 2 not valid
+sim_bram.vhdl:59:17:@795ns:(report note): RAM reading from 000A0 returns F80100107C0802A6
+icache.vhdl:617:21:@795ns:(report note): cache hit nia:0000000000000080 IR:'0' SM:'0' idx:02 tag:000000000000 way:0 RA:00000000000080
+fetch1.vhdl:122:17:@795ns:(report note): fetch1 rst:'0' IR:'0' P:'1' E:'0' 32:'0' I:'0' R:'0''0' S:'0' T:'0' nia:0000000000000084 req:'1' FF:'0'
+decode1.vhdl:671:13:@795ns:(report note): Decode insn_illegal 00000000 at 0000000000000080
+decode1.vhdl:671:13:@795ns:(report note): Decode insn_ori 618C0000 at 0000000000000080
+sim_bram.vhdl:59:17:@805ns:(report note): RAM reading from 000A8 returns 7C3143A6F821FF01
+icache.vhdl:617:21:@805ns:(report note): cache hit nia:0000000000000084 IR:'0' SM:'0' idx:02 tag:000000000000 way:0 RA:00000000000084
+fetch1.vhdl:122:17:@805ns:(report note): fetch1 rst:'0' IR:'0' P:'1' E:'0' 32:'0' I:'0' R:'0''0' S:'0' T:'0' nia:0000000000000088 req:'1' FF:'0'
+decode1.vhdl:671:13:@805ns:(report note): Decode insn_ori 618C0000 at 0000000000000080
+decode1.vhdl:671:13:@805ns:(report note): Decode insn_rldicr 798C07C6 at 0000000000000084
+register_file.vhdl:169:13:@805ns:(report note): Reading GPR 0C 0000000000000000
+sim_bram.vhdl:59:17:@815ns:(report note): RAM reading from 000B0 returns F9E10078F9C10070
+decode2.vhdl:314:21:@815ns:(report note): execute 0000000000000080 tag=3'1' rpt='0' 2nd='0' wr=0C
+control.vhdl:127:29:@815ns:(report note): tag 3 valid for gpr 0C
+icache.vhdl:617:21:@815ns:(report note): cache hit nia:0000000000000088 IR:'0' SM:'0' idx:02 tag:000000000000 way:0 RA:00000000000088
+fetch1.vhdl:122:17:@815ns:(report note): fetch1 rst:'0' IR:'0' P:'1' E:'0' 32:'0' I:'0' R:'0''0' S:'0' T:'0' nia:000000000000008C req:'1' FF:'0'
+decode1.vhdl:671:13:@815ns:(report note): Decode insn_rldicr 798C07C6 at 0000000000000084
+decode1.vhdl:671:13:@815ns:(report note): Decode insn_ori 618C0000 at 0000000000000088
+decode1.vhdl:671:13:@815ns:(report note): Decode insn_oris 658C0000 at 0000000000000088
+sim_bram.vhdl:59:17:@825ns:(report note): RAM reading from 000B8 returns FA210088FA010080
+execute1.vhdl:810:21:@825ns:(report note): CPU 0 execute 0000000000000080 op=op_compute wr=0C we='1' tag=3'1' 2nd='0'
+decode2.vhdl:314:21:@825ns:(report note): execute 0000000000000084 tag=0'1' rpt='0' 2nd='0' wr=0C
+control.vhdl:127:29:@825ns:(report note): tag 0 valid for gpr 0C
+control.vhdl:116:29:@825ns:(report note): tag 3 not recent
+icache.vhdl:617:21:@825ns:(report note): cache hit nia:000000000000008C IR:'0' SM:'0' idx:02 tag:000000000000 way:0 RA:0000000000008C
+fetch1.vhdl:122:17:@825ns:(report note): fetch1 rst:'0' IR:'0' P:'1' E:'0' 32:'0' I:'0' R:'0''0' S:'0' T:'0' nia:0000000000000090 req:'1' FF:'0'
+decode1.vhdl:671:13:@825ns:(report note): Decode insn_oris 658C0000 at 0000000000000088
+decode1.vhdl:671:13:@825ns:(report note): Decode insn_ori 618C1000 at 000000000000008C
+execute1.vhdl:810:21:@835ns:(report note): CPU 0 execute 0000000000000084 op=op_compute wr=0C we='1' tag=0'1' 2nd='0'
+decode2.vhdl:314:21:@835ns:(report note): execute 0000000000000088 tag=1'1' rpt='0' 2nd='0' wr=0C
+control.vhdl:116:29:@835ns:(report note): tag 0 not recent
+control.vhdl:127:29:@835ns:(report note): tag 1 valid for gpr 0C
+icache.vhdl:617:21:@835ns:(report note): cache hit nia:0000000000000090 IR:'0' SM:'0' idx:02 tag:000000000000 way:0 RA:00000000000090
+fetch1.vhdl:122:17:@835ns:(report note): fetch1 rst:'0' IR:'0' P:'1' E:'0' 32:'0' I:'0' R:'0''0' S:'0' T:'0' nia:0000000000000094 req:'1' FF:'0'
+decode1.vhdl:671:13:@835ns:(report note): Decode insn_ori 618C1000 at 000000000000008C
+register_file.vhdl:169:13:@835ns:(report note): Reading GPR 0C 0000000000000000
+decode1.vhdl:671:13:@835ns:(report note): Decode insn_oris 658C0000 at 0000000000000090
+decode1.vhdl:671:13:@835ns:(report note): Decode insn_mtspr 7D8903A6 at 0000000000000090
+execute1.vhdl:810:21:@845ns:(report note): CPU 0 execute 0000000000000088 op=op_compute wr=0C we='1' tag=1'1' 2nd='0'
+register_file.vhdl:70:21:@845ns:(report note): Writing GPR 0C 0000000000000000
+decode2.vhdl:314:21:@845ns:(report note): execute 000000000000008C tag=2'1' rpt='0' 2nd='0' wr=0C
+control.vhdl:116:29:@845ns:(report note): tag 1 not recent
+control.vhdl:127:29:@845ns:(report note): tag 2 valid for gpr 0C
+control.vhdl:110:25:@845ns:(report note): tag 3 not valid
+icache.vhdl:617:21:@845ns:(report note): cache hit nia:0000000000000094 IR:'0' SM:'0' idx:02 tag:000000000000 way:0 RA:00000000000094
+fetch1.vhdl:122:17:@845ns:(report note): fetch1 rst:'0' IR:'0' P:'1' E:'0' 32:'0' I:'0' R:'0''0' S:'0' T:'0' nia:0000000000000098 req:'1' FF:'0'
+decode1.vhdl:671:13:@845ns:(report note): Decode insn_mtspr 7D8903A6 at 0000000000000090
+register_file.vhdl:169:13:@845ns:(report note): Reading GPR 0C 0000000000000000
+decode1.vhdl:671:13:@845ns:(report note): Decode insn_bcctr 4E800421 at 0000000000000094
+execute1.vhdl:810:21:@855ns:(report note): CPU 0 execute 000000000000008C op=op_compute wr=0C we='1' tag=2'1' 2nd='0'
+register_file.vhdl:70:21:@855ns:(report note): Writing GPR 0C 0000000000000000
+decode2.vhdl:314:21:@855ns:(report note): execute 0000000000000090 tag=3'1' rpt='0' 2nd='0' wr=00
+control.vhdl:110:25:@855ns:(report note): tag 0 not valid
+icache.vhdl:617:21:@855ns:(report note): cache hit nia:0000000000000098 IR:'0' SM:'0' idx:02 tag:000000000000 way:0 RA:00000000000098
+fetch1.vhdl:122:17:@855ns:(report note): fetch1 rst:'0' IR:'0' P:'1' E:'0' 32:'0' I:'0' R:'0''0' S:'0' T:'0' nia:000000000000009C req:'1' FF:'0'
+decode1.vhdl:671:13:@855ns:(report note): Decode insn_bcctr 4E800421 at 0000000000000094
+register_file.vhdl:169:13:@855ns:(report note): Reading GPR 14 0000000000000000
+execute1.vhdl:1512:21:@855ns:(report note): MTSPR to SPR 9=0000000000000000
+decode1.vhdl:671:13:@855ns:(report note): Decode insn_mtspr 7D8903A6 at 0000000000000098
+cr_file.vhdl:84:13:@855ns:(report note): Reading CR 40000000
+execute1.vhdl:1512:21:@855ns:(report note): MTSPR to SPR 9=0000000000001000
+execute1.vhdl:1512:21:@855ns:(report note): MTSPR to SPR 9=0000000000001000
+decode1.vhdl:671:13:@855ns:(report note): Decode insn_attn 00000200 at 0000000000000098
+execute1.vhdl:1512:21:@855ns:(report note): MTSPR to SPR 9=0000000000001000
+execute1.vhdl:810:21:@865ns:(report note): CPU 0 execute 0000000000000090 op=op_mtspr wr=00 we='0' tag=3'1' 2nd='0'
+register_file.vhdl:70:21:@865ns:(report note): Writing GPR 0C 0000000000000000
+decode2.vhdl:314:21:@865ns:(report note): execute 0000000000000094 tag=0'1' rpt='0' 2nd='0' wr=00
+control.vhdl:110:25:@865ns:(report note): tag 1 not valid
+icache.vhdl:617:21:@865ns:(report note): cache hit nia:000000000000009C IR:'0' SM:'0' idx:02 tag:000000000000 way:0 RA:0000000000009C
+fetch1.vhdl:122:17:@865ns:(report note): fetch1 rst:'0' IR:'0' P:'1' E:'0' 32:'0' I:'0' R:'0''0' S:'0' T:'0' nia:00000000000000A0 req:'1' FF:'0'
+decode1.vhdl:671:13:@865ns:(report note): Decode insn_attn 00000200 at 0000000000000098
+decode1.vhdl:671:13:@865ns:(report note): Decode insn_brel 48000000 at 000000000000009C
+execute1.vhdl:810:21:@875ns:(report note): CPU 0 execute 0000000000000094 op=op_bcreg wr=00 we='0' tag=0'1' 2nd='0'
+execute1.vhdl:779:17:@875ns:(report note): writing odd spr 5 data=0000000000001000
+register_file.vhdl:70:21:@875ns:(report note): Writing GPR 0C 0000000000001000
+control.vhdl:110:25:@875ns:(report note): tag 2 not valid
+fetch1.vhdl:122:17:@875ns:(report note): fetch1 rst:'0' IR:'0' P:'1' E:'0' 32:'0' I:'0' R:'0''0' S:'0' T:'0' nia:00000000000000A4 req:'1' FF:'0'
+decode1.vhdl:671:13:@875ns:(report note): Decode insn_brel 48000000 at 000000000000009C
+execute1.vhdl:773:17:@885ns:(report note): writing even spr 5 data=0000000000000098
+control.vhdl:110:25:@885ns:(report note): tag 3 not valid
+fetch1.vhdl:122:17:@885ns:(report note): fetch1 rst:'0' IR:'0' P:'1' E:'0' 32:'0' I:'0' R:'0''1' S:'1' T:'0' nia:000000000000009C req:'1' FF:'0'
+fetch1.vhdl:122:17:@895ns:(report note): fetch1 rst:'0' IR:'0' P:'1' E:'0' 32:'0' I:'0' R:'1''0' S:'1' T:'0' nia:0000000000001000 req:'1' FF:'0'
+icache.vhdl:725:25:@905ns:(report note): cache miss nia:0000000000001000 IR:'0' SM:'0' idx:00 tag:000000000001 RA:00000000001000
+sim_bram.vhdl:59:17:@915ns:(report note): RAM reading from 01000 returns 3842A0003C400001
+sim_bram.vhdl:59:17:@925ns:(report note): RAM reading from 01008 returns 6000000060000000
+sim_bram.vhdl:59:17:@935ns:(report note): RAM reading from 01010 returns E922800060000000
+sim_bram.vhdl:59:17:@945ns:(report note): RAM reading from 01018 returns C8028000E9028008
+sim_bram.vhdl:59:17:@955ns:(report note): RAM reading from 01020 returns F0400C90C8228008
+icache.vhdl:617:21:@955ns:(report note): cache hit nia:0000000000001000 IR:'0' SM:'0' idx:00 tag:000000000001 way:1 RA:00000000001000
+fetch1.vhdl:122:17:@955ns:(report note): fetch1 rst:'0' IR:'0' P:'1' E:'0' 32:'0' I:'0' R:'0''0' S:'0' T:'0' nia:0000000000001004 req:'1' FF:'0'
+decode1.vhdl:671:13:@955ns:(report note): Decode insn_illegal 00000000 at 0000000000001000
+decode1.vhdl:671:13:@955ns:(report note): Decode insn_addis 3C400001 at 0000000000001000
+sim_bram.vhdl:59:17:@965ns:(report note): RAM reading from 01028 returns E9428080D8428080
+icache.vhdl:617:21:@965ns:(report note): cache hit nia:0000000000001004 IR:'0' SM:'0' idx:00 tag:000000000001 way:1 RA:00000000001004
+fetch1.vhdl:122:17:@965ns:(report note): fetch1 rst:'0' IR:'0' P:'1' E:'0' 32:'0' I:'0' R:'0''0' S:'0' T:'0' nia:0000000000001008 req:'1' FF:'0'
+decode1.vhdl:671:13:@965ns:(report note): Decode insn_addis 3C400001 at 0000000000001000
+decode1.vhdl:671:13:@965ns:(report note): Decode insn_addi 3842A000 at 0000000000001004
+sim_bram.vhdl:59:17:@975ns:(report note): RAM reading from 01030 returns 386000017D294378
+decode2.vhdl:314:21:@975ns:(report note): execute 0000000000001000 tag=1'1' rpt='0' 2nd='0' wr=02
+control.vhdl:127:29:@975ns:(report note): tag 1 valid for gpr 02
+icache.vhdl:617:21:@975ns:(report note): cache hit nia:0000000000001008 IR:'0' SM:'0' idx:00 tag:000000000001 way:1 RA:00000000001008
+fetch1.vhdl:122:17:@975ns:(report note): fetch1 rst:'0' IR:'0' P:'1' E:'0' 32:'0' I:'0' R:'0''0' S:'0' T:'0' nia:000000000000100C req:'1' FF:'0'
+decode1.vhdl:671:13:@975ns:(report note): Decode insn_addi 3842A000 at 0000000000001004
+decode1.vhdl:671:13:@975ns:(report note): Decode insn_addis 3C400001 at 0000000000001008
+register_file.vhdl:163:13:@975ns:(report note): Reading GPR 02 0000000000000000
+decode1.vhdl:671:13:@975ns:(report note): Decode insn_nop 60000000 at 0000000000001008
+sim_bram.vhdl:59:17:@985ns:(report note): RAM reading from 01038 returns 7C60189E7C295000
+execute1.vhdl:810:21:@985ns:(report note): CPU 0 execute 0000000000001000 op=op_add wr=02 we='1' tag=1'1' 2nd='0'
+decode2.vhdl:314:21:@985ns:(report note): execute 0000000000001004 tag=2'1' rpt='0' 2nd='0' wr=02
+control.vhdl:116:29:@985ns:(report note): tag 1 not recent
+control.vhdl:127:29:@985ns:(report note): tag 2 valid for gpr 02
+icache.vhdl:617:21:@985ns:(report note): cache hit nia:000000000000100C IR:'0' SM:'0' idx:00 tag:000000000001 way:1 RA:0000000000100C
+fetch1.vhdl:122:17:@985ns:(report note): fetch1 rst:'0' IR:'0' P:'1' E:'0' 32:'0' I:'0' R:'0''0' S:'0' T:'0' nia:0000000000001010 req:'1' FF:'0'
+decode1.vhdl:671:13:@985ns:(report note): Decode insn_nop 60000000 at 0000000000001008
+register_file.vhdl:163:13:@985ns:(report note): Reading GPR 00 0000000000000000
+decode1.vhdl:671:13:@985ns:(report note): Decode insn_nop 60000000 at 000000000000100C
+execute1.vhdl:810:21:@995ns:(report note): CPU 0 execute 0000000000001004 op=op_add wr=02 we='1' tag=2'1' 2nd='0'
+decode2.vhdl:314:21:@995ns:(report note): execute 0000000000001008 tag=3'1' rpt='0' 2nd='0' wr=00
+icache.vhdl:617:21:@995ns:(report note): cache hit nia:0000000000001010 IR:'0' SM:'0' idx:00 tag:000000000001 way:1 RA:00000000001010
+fetch1.vhdl:122:17:@995ns:(report note): fetch1 rst:'0' IR:'0' P:'1' E:'0' 32:'0' I:'0' R:'0''0' S:'0' T:'0' nia:0000000000001014 req:'1' FF:'0'
+decode1.vhdl:671:13:@995ns:(report note): Decode insn_nop 60000000 at 000000000000100C
+decode1.vhdl:671:13:@995ns:(report note): Decode insn_nop 60000000 at 0000000000001010
+execute1.vhdl:810:21:@1005ns:(report note): CPU 0 execute 0000000000001008 op=op_nop wr=00 we='0' tag=3'1' 2nd='0'
+register_file.vhdl:70:21:@1005ns:(report note): Writing GPR 02 0000000000010000
+decode2.vhdl:314:21:@1005ns:(report note): execute 000000000000100C tag=0'1' rpt='0' 2nd='0' wr=00
+control.vhdl:110:25:@1005ns:(report note): tag 1 not valid
+icache.vhdl:617:21:@1005ns:(report note): cache hit nia:0000000000001014 IR:'0' SM:'0' idx:00 tag:000000000001 way:1 RA:00000000001014
+fetch1.vhdl:122:17:@1005ns:(report note): fetch1 rst:'0' IR:'0' P:'1' E:'0' 32:'0' I:'0' R:'0''0' S:'0' T:'0' nia:0000000000001018 req:'1' FF:'0'
+decode1.vhdl:671:13:@1005ns:(report note): Decode insn_nop 60000000 at 0000000000001010
+decode1.vhdl:671:13:@1005ns:(report note): Decode insn_ld E9228000 at 0000000000001014
+execute1.vhdl:810:21:@1015ns:(report note): CPU 0 execute 000000000000100C op=op_nop wr=00 we='0' tag=0'1' 2nd='0'
+register_file.vhdl:70:21:@1015ns:(report note): Writing GPR 02 000000000000A000
+decode2.vhdl:314:21:@1015ns:(report note): execute 0000000000001010 tag=1'1' rpt='0' 2nd='0' wr=00
+control.vhdl:110:25:@1015ns:(report note): tag 2 not valid
+icache.vhdl:617:21:@1015ns:(report note): cache hit nia:0000000000001018 IR:'0' SM:'0' idx:00 tag:000000000001 way:1 RA:00000000001018
+fetch1.vhdl:122:17:@1015ns:(report note): fetch1 rst:'0' IR:'0' P:'1' E:'0' 32:'0' I:'0' R:'0''0' S:'0' T:'0' nia:000000000000101C req:'1' FF:'0'
+decode1.vhdl:671:13:@1015ns:(report note): Decode insn_ld E9228000 at 0000000000001014
+decode1.vhdl:671:13:@1015ns:(report note): Decode insn_nop 60000000 at 0000000000001018
+register_file.vhdl:163:13:@1015ns:(report note): Reading GPR 02 000000000000A000
+decode1.vhdl:671:13:@1015ns:(report note): Decode insn_ld E9028008 at 0000000000001018
+execute1.vhdl:810:21:@1025ns:(report note): CPU 0 execute 0000000000001010 op=op_nop wr=00 we='0' tag=1'1' 2nd='0'
+decode2.vhdl:314:21:@1025ns:(report note): execute 0000000000001014 tag=2'1' rpt='0' 2nd='0' wr=09
+control.vhdl:127:29:@1025ns:(report note): tag 2 valid for gpr 09
+control.vhdl:110:25:@1025ns:(report note): tag 3 not valid
+icache.vhdl:617:21:@1025ns:(report note): cache hit nia:000000000000101C IR:'0' SM:'0' idx:00 tag:000000000001 way:1 RA:0000000000101C
+fetch1.vhdl:122:17:@1025ns:(report note): fetch1 rst:'0' IR:'0' P:'1' E:'0' 32:'0' I:'0' R:'0''0' S:'0' T:'0' nia:0000000000001020 req:'1' FF:'0'
+decode1.vhdl:671:13:@1025ns:(report note): Decode insn_ld E9028008 at 0000000000001018
+register_file.vhdl:163:13:@1025ns:(report note): Reading GPR 02 000000000000A000
+decode1.vhdl:671:13:@1025ns:(report note): Decode insn_lfd C8028000 at 000000000000101C
+register_file.vhdl:163:13:@1025ns:(report note): Reading GPR 02 000000000000A000
+execute1.vhdl:810:21:@1035ns:(report note): CPU 0 execute 0000000000001014 op=op_load wr=09 we='1' tag=2'1' 2nd='0'
+decode2.vhdl:314:21:@1035ns:(report note): execute 0000000000001018 tag=3'1' rpt='0' 2nd='0' wr=08
+control.vhdl:110:25:@1035ns:(report note): tag 0 not valid
+control.vhdl:127:29:@1035ns:(report note): tag 3 valid for gpr 08
+icache.vhdl:617:21:@1035ns:(report note): cache hit nia:0000000000001020 IR:'0' SM:'0' idx:00 tag:000000000001 way:1 RA:00000000001020
+fetch1.vhdl:122:17:@1035ns:(report note): fetch1 rst:'0' IR:'0' P:'1' E:'0' 32:'0' I:'0' R:'0''0' S:'0' T:'0' nia:0000000000001024 req:'1' FF:'0'
+decode1.vhdl:671:13:@1035ns:(report note): Decode insn_lfd C8028000 at 000000000000101C
+register_file.vhdl:163:13:@1035ns:(report note): Reading GPR 02 000000000000A000
+decode1.vhdl:671:13:@1035ns:(report note): Decode insn_ld E9028008 at 0000000000001020
+register_file.vhdl:163:13:@1035ns:(report note): Reading GPR 02 000000000000A000
+decode1.vhdl:671:13:@1035ns:(report note): Decode insn_lfd C8228008 at 0000000000001020
+register_file.vhdl:163:13:@1035ns:(report note): Reading GPR 02 000000000000A000
+dcache.vhdl:1619:29:@1045ns:(report note): cache miss real addr:00000000002000 idx:00 tag:00000000002
+execute1.vhdl:810:21:@1045ns:(report note): CPU 0 execute 0000000000001018 op=op_load wr=08 we='1' tag=3'1' 2nd='0'
+decode2.vhdl:314:21:@1045ns:(report note): execute 000000000000101C tag=0'1' rpt='0' 2nd='0' wr=20
+control.vhdl:127:29:@1045ns:(report note): tag 0 valid for gpr 20
+control.vhdl:110:25:@1045ns:(report note): tag 1 not valid
+icache.vhdl:617:21:@1045ns:(report note): cache hit nia:0000000000001024 IR:'0' SM:'0' idx:00 tag:000000000001 way:1 RA:00000000001024
+fetch1.vhdl:122:17:@1045ns:(report note): fetch1 rst:'0' IR:'0' P:'1' E:'0' 32:'0' I:'0' R:'0''0' S:'0' T:'0' nia:0000000000001028 req:'1' FF:'0'
+decode1.vhdl:671:13:@1045ns:(report note): Decode insn_lfd C8228008 at 0000000000001020
+register_file.vhdl:163:13:@1045ns:(report note): Reading GPR 02 000000000000A000
+execute1.vhdl:1696:17:@1045ns:(report note): FP unavailable interrupt
+decode1.vhdl:671:13:@1045ns:(report note): Decode insn_op60 F0400C90 at 0000000000001024
+register_file.vhdl:163:13:@1045ns:(report note): Reading GPR 02 000000000000A000
+execute1.vhdl:1696:17:@1045ns:(report note): FP unavailable interrupt
+execute1.vhdl:1696:17:@1045ns:(report note): FP unavailable interrupt
+decode1.vhdl:671:13:@1045ns:(report note): Decode insn_op60 F0400C90 at 0000000000001024
+sim_bram.vhdl:59:17:@1055ns:(report note): RAM reading from 02000 returns 1122334455667788
+dcache.vhdl:1561:21:@1055ns:(report note): victim way:0
+dcache.vhdl:866:21:@1055ns:(report note): PLRU update, index=00 way=0
+decode1.vhdl:671:13:@1055ns:(report note): Decode insn_op60 F0400C90 at 0000000000001024
+sim_bram.vhdl:59:17:@1065ns:(report note): RAM reading from 02008 returns FFFF0000FFFF0000
+sim_bram.vhdl:59:17:@1075ns:(report note): RAM reading from 02010 returns 0000000000000000
+dcache.vhdl:1224:17:@1075ns:(report note): completing store or load miss data=1122334455667788
+dcache.vhdl:1224:17:@1075ns:(report note): completing store or load miss data=1122334455667788
+decode1.vhdl:671:13:@1075ns:(report note): Decode insn_op60 F0400C90 at 0000000000001024
+sim_bram.vhdl:59:17:@1085ns:(report note): RAM reading from 02018 returns 0000000000000000
+execute1.vhdl:810:21:@1085ns:(report note): CPU 0 execute 000000000000101C op=op_load wr=20 we='1' tag=0'1' 2nd='0'
+register_file.vhdl:70:21:@1085ns:(report note): Writing GPR 09 1122334455667788
+decode2.vhdl:314:21:@1085ns:(report note): execute 0000000000001020 tag=1'1' rpt='0' 2nd='0' wr=21
+control.vhdl:127:29:@1085ns:(report note): tag 1 valid for gpr 21
+control.vhdl:110:25:@1085ns:(report note): tag 2 not valid
+icache.vhdl:617:21:@1085ns:(report note): cache hit nia:0000000000001028 IR:'0' SM:'0' idx:00 tag:000000000001 way:1 RA:00000000001028
+fetch1.vhdl:122:17:@1085ns:(report note): fetch1 rst:'0' IR:'0' P:'1' E:'0' 32:'0' I:'0' R:'0''0' S:'0' T:'0' nia:000000000000102C req:'1' FF:'0'
+decode1.vhdl:671:13:@1085ns:(report note): Decode insn_op60 F0400C90 at 0000000000001024
+register_file.vhdl:163:13:@1085ns:(report note): Reading GPR 00 0000000000000000
+dcache.vhdl:1224:17:@1085ns:(report note): completing store or load miss data=FFFF0000FFFF0000
+dcache.vhdl:1224:17:@1085ns:(report note): completing store or load miss data=FFFF0000FFFF0000
+execute1.vhdl:1696:17:@1085ns:(report note): FP unavailable interrupt
+decode1.vhdl:671:13:@1085ns:(report note): Decode insn_lfd C8228008 at 0000000000001028
+execute1.vhdl:1696:17:@1085ns:(report note): FP unavailable interrupt
+decode1.vhdl:671:13:@1085ns:(report note): Decode insn_stfd D8428080 at 0000000000001028
+execute1.vhdl:1696:17:@1085ns:(report note): FP unavailable interrupt
+sim_bram.vhdl:59:17:@1095ns:(report note): RAM reading from 02020 returns 0000000000000000
+dcache.vhdl:1561:21:@1095ns:(report note): victim way:1
+dcache.vhdl:866:21:@1095ns:(report note): PLRU update, index=00 way=0
+register_file.vhdl:70:21:@1095ns:(report note): Writing GPR 08 FFFF0000FFFF0000
+decode2.vhdl:314:21:@1095ns:(report note): execute 0000000000001024 tag=2'1' rpt='0' 2nd='0' wr=00
+control.vhdl:110:25:@1095ns:(report note): tag 3 not valid
+icache.vhdl:617:21:@1095ns:(report note): cache hit nia:000000000000102C IR:'0' SM:'0' idx:00 tag:000000000001 way:1 RA:0000000000102C
+fetch1.vhdl:122:17:@1095ns:(report note): fetch1 rst:'0' IR:'0' P:'1' E:'0' 32:'0' I:'0' R:'0''0' S:'0' T:'0' nia:0000000000001030 req:'1' FF:'0'
+decode1.vhdl:671:13:@1095ns:(report note): Decode insn_stfd D8428080 at 0000000000001028
+execute1.vhdl:1663:17:@1095ns:(report note): illegal instruction
+decode1.vhdl:671:13:@1095ns:(report note): Decode insn_ld E9428080 at 000000000000102C
+register_file.vhdl:163:13:@1095ns:(report note): Reading GPR 02 000000000000A000
+register_file.vhdl:169:13:@1095ns:(report note): Reading GPR 22 0000000000000000
+execute1.vhdl:1663:17:@1095ns:(report note): illegal instruction
+decode1.vhdl:671:13:@1095ns:(report note): Decode insn_ld E9428080 at 000000000000102C
+execute1.vhdl:1663:17:@1095ns:(report note): illegal instruction
+execute1.vhdl:1663:17:@1095ns:(report note): illegal instruction
+sim_bram.vhdl:59:17:@1105ns:(report note): RAM reading from 02028 returns 0000000000000000
+execute1.vhdl:773:17:@1105ns:(report note): writing even spr 0 data=000000000000101C
+execute1.vhdl:779:17:@1105ns:(report note): writing odd spr 0 data=9000000000000001
+fetch1.vhdl:122:17:@1105ns:(report note): fetch1 rst:'0' IR:'0' P:'1' E:'0' 32:'0' I:'1' R:'0''0' S:'0' T:'0' nia:0000000000001034 req:'0' FF:'0'
+decode1.vhdl:671:13:@1105ns:(report note): Decode insn_ld E9428080 at 000000000000102C
+register_file.vhdl:163:13:@1105ns:(report note): Reading GPR 02 000000000000A000
+register_file.vhdl:169:13:@1105ns:(report note): Reading GPR 0A 0000000000000098
+sim_bram.vhdl:59:17:@1115ns:(report note): RAM reading from 02030 returns 0000000000000000
+fetch1.vhdl:122:17:@1115ns:(report note): fetch1 rst:'0' IR:'0' P:'1' E:'0' 32:'0' I:'0' R:'0''0' S:'0' T:'0' nia:0000000000000800 req:'1' FF:'0'
+sim_bram.vhdl:59:17:@1125ns:(report note): RAM reading from 02038 returns 0000000000000000
+icache.vhdl:725:25:@1125ns:(report note): cache miss nia:0000000000000800 IR:'0' SM:'0' idx:20 tag:000000000000 RA:00000000000800
+sim_bram.vhdl:59:17:@1155ns:(report note): RAM reading from 00800 returns 7C0903A67C1042A6
+sim_bram.vhdl:59:17:@1165ns:(report note): RAM reading from 00808 returns 4E80042038600800
+sim_bram.vhdl:59:17:@1175ns:(report note): RAM reading from 00810 returns 0000000000000000
+sim_bram.vhdl:59:17:@1185ns:(report note): RAM reading from 00818 returns 0000000000000000
+sim_bram.vhdl:59:17:@1195ns:(report note): RAM reading from 00820 returns 0000000000000000
+icache.vhdl:617:21:@1195ns:(report note): cache hit nia:0000000000000800 IR:'0' SM:'0' idx:20 tag:000000000000 way:0 RA:00000000000800
+fetch1.vhdl:122:17:@1195ns:(report note): fetch1 rst:'0' IR:'0' P:'1' E:'0' 32:'0' I:'0' R:'0''0' S:'0' T:'0' nia:0000000000000804 req:'1' FF:'0'
+decode1.vhdl:671:13:@1195ns:(report note): Decode insn_illegal 00000000 at 0000000000000800
+decode1.vhdl:671:13:@1195ns:(report note): Decode insn_mfspr 7C1042A6 at 0000000000000800
+sim_bram.vhdl:59:17:@1205ns:(report note): RAM reading from 00828 returns 0000000000000000
+icache.vhdl:617:21:@1205ns:(report note): cache hit nia:0000000000000804 IR:'0' SM:'0' idx:20 tag:000000000000 way:0 RA:00000000000804
+fetch1.vhdl:122:17:@1205ns:(report note): fetch1 rst:'0' IR:'0' P:'1' E:'0' 32:'0' I:'0' R:'0''0' S:'0' T:'0' nia:0000000000000808 req:'1' FF:'0'
+decode1.vhdl:671:13:@1205ns:(report note): Decode insn_mfspr 7C1042A6 at 0000000000000800
+decode1.vhdl:671:13:@1205ns:(report note): Decode insn_mtspr 7C0903A6 at 0000000000000804
+register_file.vhdl:169:13:@1205ns:(report note): Reading GPR 00 0000000000000000
+sim_bram.vhdl:59:17:@1215ns:(report note): RAM reading from 00830 returns 0000000000000000
+decode2.vhdl:314:21:@1215ns:(report note): execute 0000000000000800 tag=3'1' rpt='0' 2nd='0' wr=00
+control.vhdl:127:29:@1215ns:(report note): tag 3 valid for gpr 00
+icache.vhdl:617:21:@1215ns:(report note): cache hit nia:0000000000000808 IR:'0' SM:'0' idx:20 tag:000000000000 way:0 RA:00000000000808
+fetch1.vhdl:122:17:@1215ns:(report note): fetch1 rst:'0' IR:'0' P:'1' E:'0' 32:'0' I:'0' R:'0''0' S:'0' T:'0' nia:000000000000080C req:'1' FF:'0'
+decode1.vhdl:671:13:@1215ns:(report note): Decode insn_mtspr 7C0903A6 at 0000000000000804
+register_file.vhdl:169:13:@1215ns:(report note): Reading GPR 00 0000000000000000
+execute1.vhdl:1431:25:@1215ns:(report note): MFSPR to SPR 272=0000000000000000
+decode1.vhdl:671:13:@1215ns:(report note): Decode insn_mfspr 7C1042A6 at 0000000000000808
+execute1.vhdl:1431:25:@1215ns:(report note): MFSPR to SPR 272=0000000000000000
+execute1.vhdl:1431:25:@1215ns:(report note): MFSPR to SPR 272=000000000000101C
+decode1.vhdl:671:13:@1215ns:(report note): Decode insn_addi 38600800 at 0000000000000808
+execute1.vhdl:1431:25:@1215ns:(report note): MFSPR to SPR 272=0000000000000098
+sim_bram.vhdl:59:17:@1225ns:(report note): RAM reading from 00838 returns 0000000000000000
+execute1.vhdl:810:21:@1225ns:(report note): CPU 0 execute 0000000000000800 op=op_mfspr wr=00 we='1' tag=3'1' 2nd='0'
+decode2.vhdl:314:21:@1225ns:(report note): execute 0000000000000804 tag=0'1' rpt='0' 2nd='0' wr=00
+icache.vhdl:617:21:@1225ns:(report note): cache hit nia:000000000000080C IR:'0' SM:'0' idx:20 tag:000000000000 way:0 RA:0000000000080C
+fetch1.vhdl:122:17:@1225ns:(report note): fetch1 rst:'0' IR:'0' P:'1' E:'0' 32:'0' I:'0' R:'0''0' S:'0' T:'0' nia:0000000000000810 req:'1' FF:'0'
+decode1.vhdl:671:13:@1225ns:(report note): Decode insn_addi 38600800 at 0000000000000808
+register_file.vhdl:169:13:@1225ns:(report note): Reading GPR 03 0000000000000000
+execute1.vhdl:1512:21:@1225ns:(report note): MTSPR to SPR 9=0000000000000000
+decode1.vhdl:671:13:@1225ns:(report note): Decode insn_bcctr 4E800420 at 000000000000080C
+execute1.vhdl:1512:21:@1225ns:(report note): MTSPR to SPR 9=0000000000000098
+execute1.vhdl:1512:21:@1225ns:(report note): MTSPR to SPR 9=0000000000000098
+execute1.vhdl:810:21:@1235ns:(report note): CPU 0 execute 0000000000000804 op=op_mtspr wr=00 we='0' tag=0'1' 2nd='0'
+decode2.vhdl:314:21:@1235ns:(report note): execute 0000000000000808 tag=1'1' rpt='0' 2nd='0' wr=03
+control.vhdl:127:29:@1235ns:(report note): tag 1 valid for gpr 03
+icache.vhdl:617:21:@1235ns:(report note): cache hit nia:0000000000000810 IR:'0' SM:'0' idx:20 tag:000000000000 way:0 RA:00000000000810
+fetch1.vhdl:122:17:@1235ns:(report note): fetch1 rst:'0' IR:'0' P:'1' E:'0' 32:'0' I:'0' R:'0''0' S:'0' T:'0' nia:0000000000000814 req:'1' FF:'0'
+decode1.vhdl:671:13:@1235ns:(report note): Decode insn_bcctr 4E800420 at 000000000000080C
+decode1.vhdl:671:13:@1235ns:(report note): Decode insn_addi 38600800 at 0000000000000810
+cr_file.vhdl:84:13:@1235ns:(report note): Reading CR 40000000
+decode1.vhdl:671:13:@1235ns:(report note): Decode insn_attn 00000000 at 0000000000000810
+execute1.vhdl:810:21:@1245ns:(report note): CPU 0 execute 0000000000000808 op=op_add wr=03 we='1' tag=1'1' 2nd='0'
+execute1.vhdl:779:17:@1245ns:(report note): writing odd spr 5 data=0000000000000098
+register_file.vhdl:70:21:@1245ns:(report note): Writing GPR 00 0000000000000098
+decode2.vhdl:314:21:@1245ns:(report note): execute 000000000000080C tag=2'1' rpt='0' 2nd='0' wr=00
+control.vhdl:110:25:@1245ns:(report note): tag 3 not valid
+icache.vhdl:617:21:@1245ns:(report note): cache hit nia:0000000000000814 IR:'0' SM:'0' idx:20 tag:000000000000 way:0 RA:00000000000814
+fetch1.vhdl:122:17:@1245ns:(report note): fetch1 rst:'0' IR:'0' P:'1' E:'0' 32:'0' I:'0' R:'0''0' S:'0' T:'0' nia:0000000000000818 req:'1' FF:'0'
+decode1.vhdl:671:13:@1245ns:(report note): Decode insn_attn 00000000 at 0000000000000810
+decode1.vhdl:671:13:@1245ns:(report note): Decode insn_attn 00000000 at 0000000000000814
+execute1.vhdl:810:21:@1255ns:(report note): CPU 0 execute 000000000000080C op=op_bcreg wr=00 we='0' tag=2'1' 2nd='0'
+control.vhdl:110:25:@1255ns:(report note): tag 0 not valid
+icache.vhdl:617:21:@1255ns:(report note): cache hit nia:0000000000000818 IR:'0' SM:'0' idx:20 tag:000000000000 way:0 RA:00000000000818
+fetch1.vhdl:122:17:@1255ns:(report note): fetch1 rst:'0' IR:'0' P:'1' E:'0' 32:'0' I:'0' R:'0''0' S:'0' T:'0' nia:000000000000081C req:'1' FF:'0'
+decode1.vhdl:671:13:@1255ns:(report note): Decode insn_attn 00000000 at 0000000000000814
+decode1.vhdl:671:13:@1255ns:(report note): Decode insn_attn 00000000 at 0000000000000818
+decode1.vhdl:671:13:@1255ns:(report note): Decode insn_attn 00000000 at 0000000000000818
+register_file.vhdl:70:21:@1265ns:(report note): Writing GPR 03 0000000000000800
+control.vhdl:110:25:@1265ns:(report note): tag 1 not valid
+decode1.vhdl:671:13:@1265ns:(report note): Decode insn_attn 00000000 at 0000000000000818
+decode1.vhdl:671:13:@1265ns:(report note): Decode insn_attn 00000000 at 0000000000000818
+fetch1.vhdl:122:17:@1275ns:(report note): fetch1 rst:'0' IR:'0' P:'1' E:'0' 32:'0' I:'0' R:'1''0' S:'1' T:'0' nia:0000000000000098 req:'1' FF:'0'
+decode1.vhdl:671:13:@1275ns:(report note): Decode insn_attn 00000000 at 0000000000000818
+icache.vhdl:617:21:@1285ns:(report note): cache hit nia:0000000000000098 IR:'0' SM:'0' idx:02 tag:000000000000 way:0 RA:00000000000098
+fetch1.vhdl:122:17:@1285ns:(report note): fetch1 rst:'0' IR:'0' P:'1' E:'0' 32:'0' I:'0' R:'0''0' S:'0' T:'0' nia:000000000000009C req:'1' FF:'0'
+decode1.vhdl:671:13:@1285ns:(report note): Decode insn_attn 00000000 at 0000000000000098
+decode1.vhdl:671:13:@1285ns:(report note): Decode insn_attn 00000200 at 0000000000000098
+icache.vhdl:617:21:@1295ns:(report note): cache hit nia:000000000000009C IR:'0' SM:'0' idx:02 tag:000000000000 way:0 RA:0000000000009C
+fetch1.vhdl:122:17:@1295ns:(report note): fetch1 rst:'0' IR:'0' P:'1' E:'0' 32:'0' I:'0' R:'0''0' S:'0' T:'0' nia:00000000000000A0 req:'1' FF:'0'
+decode1.vhdl:671:13:@1295ns:(report note): Decode insn_attn 00000200 at 0000000000000098
+decode1.vhdl:671:13:@1295ns:(report note): Decode insn_brel 48000000 at 000000000000009C
+decode2.vhdl:314:21:@1305ns:(report note): execute 0000000000000098 tag=3'1' rpt='0' 2nd='0' wr=00
+fetch1.vhdl:122:17:@1305ns:(report note): fetch1 rst:'0' IR:'0' P:'1' E:'0' 32:'0' I:'0' R:'0''0' S:'0' T:'0' nia:00000000000000A4 req:'1' FF:'0'
+decode1.vhdl:671:13:@1305ns:(report note): Decode insn_brel 48000000 at 000000000000009C
+execute1.vhdl:1321:25:@1305ns:(report note): ATTN
+execute1.vhdl:810:21:@1315ns:(report note): CPU 0 execute 0000000000000098 op=op_attn wr=00 we='0' tag=3'1' 2nd='0'
+fetch1.vhdl:122:17:@1315ns:(report note): fetch1 rst:'0' IR:'0' P:'1' E:'0' 32:'0' I:'0' R:'0''1' S:'0' T:'0' nia:000000000000009C req:'1' FF:'0'
+register_file.vhdl:213:21:@1325ns:(report note): GPR0 0000000000000098
+register_file.vhdl:213:21:@1325ns:(report note): GPR1 00000000000060F0
+register_file.vhdl:213:21:@1325ns:(report note): GPR2 000000000000A000
+register_file.vhdl:213:21:@1325ns:(report note): GPR3 0000000000000800
+register_file.vhdl:213:21:@1325ns:(report note): GPR4 0000000000000000
+register_file.vhdl:213:21:@1325ns:(report note): GPR5 0000000000000000
+register_file.vhdl:213:21:@1325ns:(report note): GPR6 0000000000000000
+register_file.vhdl:213:21:@1325ns:(report note): GPR7 0000000000000000
+register_file.vhdl:213:21:@1325ns:(report note): GPR8 FFFF0000FFFF0000
+register_file.vhdl:213:21:@1325ns:(report note): GPR9 1122334455667788
+register_file.vhdl:213:21:@1325ns:(report note): GPR10 0000000000000098
+register_file.vhdl:213:21:@1325ns:(report note): GPR11 0000000000000002
+register_file.vhdl:213:21:@1325ns:(report note): GPR12 0000000000001000
+register_file.vhdl:213:21:@1325ns:(report note): GPR13 0000000000000000
+register_file.vhdl:213:21:@1325ns:(report note): GPR14 0000000000000000
+register_file.vhdl:213:21:@1325ns:(report note): GPR15 0000000000000000
+register_file.vhdl:213:21:@1325ns:(report note): GPR16 0000000000000000
+register_file.vhdl:213:21:@1325ns:(report note): GPR17 0000000000000000
+register_file.vhdl:213:21:@1325ns:(report note): GPR18 0000000000000000
+register_file.vhdl:213:21:@1325ns:(report note): GPR19 0000000000000000
+register_file.vhdl:213:21:@1325ns:(report note): GPR20 0000000000000000
+register_file.vhdl:213:21:@1325ns:(report note): GPR21 0000000000000000
+register_file.vhdl:213:21:@1325ns:(report note): GPR22 0000000000000000
+register_file.vhdl:213:21:@1325ns:(report note): GPR23 0000000000000000
+register_file.vhdl:213:21:@1325ns:(report note): GPR24 0000000000000000
+register_file.vhdl:213:21:@1325ns:(report note): GPR25 0000000000000000
+register_file.vhdl:213:21:@1325ns:(report note): GPR26 0000000000000000
+register_file.vhdl:213:21:@1325ns:(report note): GPR27 0000000000000000
+register_file.vhdl:213:21:@1325ns:(report note): GPR28 0000000000000000
+register_file.vhdl:213:21:@1325ns:(report note): GPR29 0000000000000000
+register_file.vhdl:213:21:@1325ns:(report note): GPR30 0000000000000000
+register_file.vhdl:213:21:@1325ns:(report note): GPR31 0000000000000000
+execute1.vhdl:2294:17:@1325ns:(report note): LR 0000000000000098
+execute1.vhdl:2295:17:@1325ns:(report note): CTR 0000000000000098
+cr_file.vhdl:95:17:@1325ns:(report note): CR 0000000040000000
+cr_file.vhdl:103:17:@1325ns:(report note): XER 0000000000000000
+cr_file.vhdl:104:17:@1325ns:(assertion failure): end of test
+./core_tb:error: assertion failed
+  instance: .core_tb(behave).soc0@soc(behaviour).processors(0).core@core(behave).cr_file_0@cr_file(behaviour).sim_dump_test.dump_cr
+./core_tb:error: simulation failed

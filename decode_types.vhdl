@@ -398,7 +398,10 @@ package decode_types is
         INSN_fnmadds,
         INSN_fnmsub,
         INSN_fnmsubs,
-        INSN_fsel
+        INSN_fsel,
+
+	-- VSX instructions (initial)
+	INSN_xxlor
         );
 
     constant INSN_first_rb : insn_code := INSN_add;
@@ -410,6 +413,11 @@ package decode_types is
     constant INSN_first_8ls : insn_code := INSN_lhzu;
     constant INSN_first_fp_mls : insn_code := INSN_stfd;
     constant INSN_first_fp_nonmls : insn_code := INSN_stfdu;
+
+    -- First VSX instruction (architectural marker)
+    constant INSN_first_vsx : insn_code := INSN_xxlor;
+
+
 
     type input_reg_a_t is (NONE, RA, RA_OR_ZERO, RA0_OR_CIA, CIA, FRA);
     type input_reg_b_t is (IMM, RB, FRB);
@@ -780,6 +788,9 @@ package body decode_types is
             when INSN_isync     => return "010011";
             when INSN_mcrf      => return "010011";
             when INSN_rfid      => return "010011";
+--vector instruction
+	    when INSN_xxlor 	=> return "111100";
+
             when INSN_fcfids    => return "111011";
             when INSN_fcfidus   => return "111011";
             when INSN_fcmpu     => return "111111";

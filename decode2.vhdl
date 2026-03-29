@@ -181,10 +181,10 @@ architecture behaviour of decode2 is
                 if HAS_FPU then
                     return ('1', fpr_to_gspr(insn_frt(insn_in)));
                 else
-                    return ('0', "000000");
+                    return ('0', "0000000");
                 end if;
             when NONE =>
-                return ('0', "000000");
+                return ('0', "0000000");
         end case;
     end;
 
@@ -682,6 +682,7 @@ begin
         elsif dc2.busy = '0' then
             if decoded_reg_a.reg_valid = '1' then
                 v.e.read_data1 := r_in.read1_data;
+		v.e.read_data1_hi := r_in.read1_data_hi;
             else
                 v.e.read_data1 := decode_a_const(d_in.decode.input_reg_a, d_in.prefix, d_in.nia);
             end if;
@@ -693,6 +694,8 @@ begin
         elsif dc2.busy = '0' then
             if decoded_reg_b.reg_valid = '1' then
                 v.e.read_data2 := r_in.read2_data;
+		v.e.read_data2_hi := r_in.read2_data_hi;
+
             else
                 v.e.read_data2 := decode_b_const(d_in.decode.const_sel, d_in.insn, d_in.prefix);
             end if;
@@ -704,6 +707,7 @@ begin
         elsif dc2.busy = '0' then
             if decoded_reg_c.reg_valid = '1' then
                 v.e.read_data3 := r_in.read3_data;
+		v.e.read_data3_hi := r_in.read3_data_hi;
             else
                 v.e.read_data3 := (others => '0');
             end if;

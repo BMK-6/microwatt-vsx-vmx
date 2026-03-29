@@ -15,6 +15,9 @@ entity execute1 is
         SIM : boolean := false;
         EX1_BYPASS : boolean := true;
         HAS_FPU : boolean := true;
+        -- Set true to route simple FP ops through fpu2 path for integration testing
+        -- Revert to false before VSX decode integration
+        TEST_FPU2_PATH : boolean := true;
         CPU_INDEX : natural;
         NCPUS : positive := 1;
         -- Non-zero to enable log data collection
@@ -28,9 +31,10 @@ entity execute1 is
 	flush_in : in std_ulogic;
 	busy_out : out std_ulogic;
 
-	e_in  : in Decode2ToExecute1Type;
-        l_in  : in Loadstore1ToExecute1Type;
-        fp_in : in FPUToExecute1Type;
+	e_in   : in Decode2ToExecute1Type;
+        l_in   : in Loadstore1ToExecute1Type;
+        fp_in  : in FPUToExecute1Type;
+    	fp_in2 : in FPUToExecute1Type;
 
 	ext_irq_in : std_ulogic;
         interrupt_in : WritebackToExecute1Type;
@@ -40,6 +44,7 @@ entity execute1 is
 	-- asynchronous
         l_out : out Execute1ToLoadstore1Type;
         fp_out : out Execute1ToFPUType;
+    	fp_out2 : out Execute1ToFPUType;
 
 	e_out : out Execute1ToWritebackType;
         bypass_data : out bypass_data_t;
@@ -211,6 +216,8 @@ architecture behaviour of execute1 is
     signal actions : actions_type;
 
     signal a_in, b_in, c_in : std_ulogic_vector(63 downto 0);
+    signal a_in_hi, b_in_hi, c_in_hi : std_ulogic_vector(63 downto 0); --holds the higher bits for vector insn
+
     signal cr_in : std_ulogic_vector(31 downto 0);
     signal xerc_in : xer_common_t;
 
@@ -638,6 +645,11 @@ begin
     a_in <= e_in.read_data1;
     b_in <= e_in.read_data2;
     c_in <= e_in.read_data3;
+    --to hold the higher bits of vec insn
+    a_in_hi <= e_in.read_data1_hi;
+    b_in_hi <= e_in.read_data2_hi;
+    c_in_hi <= e_in.read_data3_hi;
+
     cr_in <= e_in.cr;
 
     x_to_pmu.occur <= (instr_complete => wb_events.instr_complete,
@@ -679,9 +691,8 @@ begin
     xerc_in.ca <= ex1.xerc.ca when ex1.xerc_valid = '1' else e_in.xerc.ca;
     xerc_in.ca32 <= ex1.xerc.ca32 when ex1.xerc_valid = '1' else e_in.xerc.ca32;
 
-    -- N.B. the busy signal from each source includes the
-    -- stage2 stall from that source in it.
-    busy_out <= l_in.busy or ex1.busy or fp_in.busy or ctrl.wait_state;
+
+    busy_out <= l_in.busy or ex1.busy or fp_in.busy or ctrl.wait_state or fp_in2.busy;
 
     valid_in <= e_in.valid and not (busy_out or flush_in or ex1.e.redirect or ex1.e.interrupt);
 
@@ -1035,7 +1046,7 @@ begin
             when "101" =>
 		if e_in.insn(20) = '0' then
 		    -- mfcr
-		    mfcr_result := x"00000000" & cr_in;
+		    mfcr_result := x"00000000" & cr_in ;
 		else
 		    -- mfocrf
 		    crnum := fxm_to_num(insn_fxm(e_in.insn));
@@ -1217,6 +1228,8 @@ begin
         variable srr1 : std_ulogic_vector(63 downto 0);
         variable c32, c64 : std_ulogic;
         variable sprnum : spr_num_t;
+	constant INSN_first_vsx : boolean := false; -- remove before VSX integration
+
     begin
         v := actions_type_init;
         v.e.write_data := alu_result;
@@ -1413,7 +1426,7 @@ begin
                 v.e.redirect := '1';
                 v.se.set_cfar := '1';
                 if HAS_FPU then
-                    v.fp_intr := fp_in.exception and
+                    v.fp_intr := (fp_in.exception or fp_in2.exception) and
                                  (srr1(MSR_FE0) or srr1(MSR_FE1));
                 end if;
                 v.do_trace := '0';
@@ -1502,7 +1515,7 @@ begin
                         v.new_msr(MSR_DR) := '1';
                     end if;
                     if HAS_FPU then
-                        v.fp_intr := fp_in.exception and
+                        v.fp_intr := (fp_in.exception or fp_in2.exception) and
                                      (c_in(MSR_FE0) or c_in(MSR_FE1));
                     end if;
                 end if;
@@ -1525,7 +1538,6 @@ begin
                         when SPRSEL_DEC =>
                             v.se.write_dec := '1';
                         when SPRSEL_LOGR =>
-                            -- must be writing LOG_ADDR; LOG_DATA is readonly
                             v.se.write_loga := '1';
                         when SPRSEL_CFAR =>
                             v.se.write_cfar := '1';
@@ -1695,8 +1707,18 @@ begin
             if e_in.valid = '1' then
                 report "FP unavailable interrupt";
             end if;
-        end if;
-
+        elsif HAS_FPU and ex1.msr(MSR_VSX) = '0' and INSN_first_vsx then
+            -- VSX unavailable interrupt (Power ISA 3.1 section 7.1)
+            -- Same vector as FP unavailable (0x800)
+	    --   insn_code'pos(e_in.insn_type) >= insn_code'pos(INSN_first_vsx) elsif HAS_FPU and ex1.msr(MSR_VSX) = '0' and false then"""
+            v.exception := '1';
+            v.e.srr1(47 - 34) := e_in.prefixed;
+            v.e.intr_vec := 16#800#;
+            if e_in.valid = '1' then
+                report "VSX unavailable interrupt";
+            end if;
+	end if;
+	
         if e_in.unit = ALU then
             v.complete := e_in.valid and not v.exception and not owait;
             v.bypass_valid := e_in.valid and not slow_op;
@@ -1713,6 +1735,7 @@ begin
 	variable irq_valid : std_ulogic;
 	variable exception : std_ulogic;
         variable fv : Execute1ToFPUType;
+	variable fv2 : Execute1ToFPUType;
         variable go : std_ulogic;
         variable bypass_valid : std_ulogic;
         variable is_scv : std_ulogic;
@@ -1739,6 +1762,8 @@ begin
 
         lv := Execute1ToLoadstore1Init;
         fv := Execute1ToFPUInit;
+	fv2:= Execute1ToFPUInit;
+
 
         x_to_multiply.valid <= '0';
         x_to_mult_32s.valid <= '0';
@@ -1815,7 +1840,7 @@ begin
             end if;
         end if;
 
-        v.no_instr_avail := not (e_in.valid or l_in.busy or ex1.busy or fp_in.busy);
+        v.no_instr_avail := not (e_in.valid or l_in.busy or ex1.busy or fp_in.busy or fp_in2.busy);
 
         go := valid_in and not exception;
         v.instr_dispatch := go;
@@ -1854,9 +1879,17 @@ begin
                 lv.valid := '1';
             end if;
             if HAS_FPU and e_in.unit = FPU then
-                fv.valid := '1';
+                if TEST_FPU2_PATH then
+                    -- Integration test: route FP ops through fpu2/hi-lane path
+                    -- Tests full pipeline: execute1 -> fpu2 -> writeback -> hi_registers
+                    -- Revert TEST_FPU2_PATH to false before VSX decode integration
+                    fv2.valid := '1';
+                else
+                    -- Normal path: scalar FP through fpu1/lo-lane
+                    fv.valid := '1';
+                end if;
             end if;
-        end if;
+	end if;
         is_scv := go and actions.se.scv_trap;
         bsort_start <= go and actions.start_bsort;
         bperm_start <= go and actions.start_bperm;
@@ -1920,11 +1953,23 @@ begin
             v.xerc_valid := '1';
         end if;
 
-        if (ex1.busy or l_in.busy or fp_in.busy) = '0' then
-            v.e.interrupt := exception;
-            v.e.is_scv := is_scv;
-        end if;
-        if v.e.valid = '0' then
+      
+	-- Async interrupts (irq_valid path, handled above via exception variable)
+	-- must wait for all in-flight ops to drain.
+	-- Synchronous precise exceptions (FP unavailable, illegal, privileged, trap)
+	-- must fire immediately — they are caused by the current instruction and
+	-- are independent of any prior in-flight instruction in fpu2/loadstore.
+	-- fpu2 will be flushed when the interrupt reaches writeback regardless.
+	if (ex1.busy or l_in.busy or (fp_in.busy and fp_in2.busy)) = '0' then
+    	    v.e.interrupt := exception;
+	    v.e.is_scv := is_scv;
+	--elsif exception = '1' then
+    	-- Synchronous exception: deliver even if fpu2 is busy.
+    	-- The flush from the interrupt will drain fpu2.
+	    --v.e.interrupt := '1';
+	    --v.e.is_scv := is_scv;
+	end if;
+	if v.e.valid = '0' then
             v.e.redirect := '0';
             v.e.br_last := '0';
         end if;
@@ -1983,14 +2028,14 @@ begin
         lv.prefixed := e_in.prefixed;
         lv.repeat := e_in.repeat;
         lv.second := e_in.second;
-        lv.e2stall := fp_in.f2stall;
+        lv.e2stall := fp_in.f2stall or fp_in2.f2stall ;
         lv.hashkey := ramspr_odd;
         if e_in.insn(7) = '0' then
             lv.hash_enable := dex(DEXCR_PHIE);
         else
             lv.hash_enable := dex(DEXCR_NPHIE);
         end if;
-
+	
         -- Outputs to FPU
         fv.op := e_in.insn_type;
         fv.insn := e_in.insn;
@@ -2012,12 +2057,46 @@ begin
         fv.xerc := xerc_in;
         fv.stall := l_in.l2stall;
 
+
+	-- Outputs to FPU2
+        fv2.op := e_in.insn_type;
+        fv2.insn := e_in.insn;
+        fv2.itag := e_in.instr_tag;
+        fv2.single := e_in.is_32bit;
+        fv2.is_signed := e_in.is_signed;
+        fv2.fe_mode := ex1.msr(MSR_FE0) & ex1.msr(MSR_FE1);
+      
+	-- For TEST_FPU2_PATH: route lo-lane data through fpu2 so the full
+	-- exception/writeback path is exercised with known-good operands.
+	-- When full VSX is integrated, switch to a_in_hi/b_in_hi/c_in_hi.
+	if TEST_FPU2_PATH then
+    	   fv2.fra := a_in;
+    	   fv2.frb := b_in;
+    	   fv2.frc := c_in;
+	else
+    	   fv2.fra := a_in_hi;
+    	   fv2.frb := b_in_hi;
+    	   fv2.frc := c_in_hi;
+	end if;       
+	fv2.valid_a := e_in.reg_valid1;
+        fv2.valid_b := e_in.reg_valid2;
+        fv2.valid_c := e_in.reg_valid3;
+        fv2.frt := e_in.write_reg;
+        fv2.rc := e_in.rc;
+        fv2.out_cr := e_in.output_cr;
+        fv2.m32b := not ex1.msr(MSR_SF);
+        fv2.oe := e_in.oe;
+        fv2.xerc := xerc_in;
+        fv2.stall := l_in.l2stall;
+
+
 	-- Update registers
 	ex1in <= v;
 
 	-- update outputs
         l_out <= lv;
         fp_out <= fv;
+	fp_out2 <= fv2;
         irq_valid_log <= irq_valid;
     end process;
 
@@ -2042,7 +2121,7 @@ begin
         assemble_xer(ex1.e.xerc, ctrl.xer_low) when SPRSEL_XER,
         64x"0" when others;
 
-    stage2_stall <= l_in.l2stall or fp_in.f2stall;
+    stage2_stall <= l_in.l2stall or fp_in.f2stall or fp_in2.f2stall;
 
     -- Second execute stage control
     execute2_1: process(all)
@@ -2165,10 +2244,12 @@ begin
         v.e.write_cr_data := cr_res;
         v.e.write_cr_mask := cr_mask;
 
-	if stage2_stall = '0' then
-            if ex1.se.write_msr = '1' then
-                ctrl_tmp.msr <= ex1.msr;
-            end if;
+      
+      	if stage2_stall = '0' then
+	    if ex1.se.write_msr = '1' then
+            	ctrl_tmp.msr <= ex1.msr;
+       	    end if;
+	
             if ex1.se.write_xerlow = '1' then
                 ctrl_tmp.xer_low <= ex1.spr_write_data(17 downto 0);
             end if;
@@ -2242,6 +2323,7 @@ begin
             ctrl_tmp.msr(MSR_SE) <= '0';
             ctrl_tmp.msr(MSR_BE) <= '0';
             ctrl_tmp.msr(MSR_FP) <= '0';
+            ctrl_tmp.msr(MSR_VSX) <= '0';  -- VSX cleared on interrupt
             ctrl_tmp.msr(MSR_FE0) <= '0';
             ctrl_tmp.msr(MSR_FE1) <= '0';
             ctrl_tmp.msr(MSR_IR) <= interrupt_in.alt_int;
